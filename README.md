@@ -30,6 +30,15 @@ To install R, visit the [CRAN website](https://cran.r-project.org/), follow the 
 
 To install RStudio, visit the [RStudio website](https://www.rstudio.com/products/rstudio/download/#download), and download and install the free version of RStudio Desktop. 
 
+### R packages
+
+We'll be using a number of R packages. To install, open RStudio, and enter the following commands in the console:
+
+```
+install.packages("tidyverse", "sf", "terra", "ape", "phytools", "picante", "phyloregion", "prioritizr", "Rsymphony")
+install.packages("canaper", repos = "https://ropensci.r-universe.dev")
+```
+
 
 ### Code & data
 
