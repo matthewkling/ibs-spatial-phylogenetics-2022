@@ -7,7 +7,7 @@ This repository contains instructions, data, and code for the International Biog
 
 - WHEN: October 12 & 13, 10:00am-1:00pm PDT (17:00-20:00 GMT) both days
 - WHERE: Zoom (at the link emailed to registrants)
-- PREP: Workshop participants must [install Biodiverse, R, and RStudio](https://github.com/matthewkling/ibs-spatial-phylogenetics-2022/edit/main/README.md#software-installation) **before** the workshop. We recommend doing this well ahead of time to allow for troubleshooting. 
+- PREP: Workshop participants must [install Biodiverse, R, and RStudio](https://github.com/matthewkling/ibs-spatial-phylogenetics-2022#biodiverse) **before** the workshop. We recommend doing this well ahead of time to allow for troubleshooting. 
 
 
 ## Software installation
