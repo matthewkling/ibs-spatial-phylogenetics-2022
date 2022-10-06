@@ -2,6 +2,7 @@
 
 This repository contains instructions, data, and code for the International Biogeography Society's October 2022 workshop on spatial phylogenetics.
 
+![alt text](https://raw.githubusercontent.com/matthewkling/ibs-spatial-phylogenetics-2022/main/spatialphy.png)
 
 ## Workshop logistics 
 
