@@ -28,3 +28,4 @@ vignettes/*.pdf
 .Renviron
 ibs-spatial-phylogenetics-2022.Rproj
 data_raw
+*.DS_Store
