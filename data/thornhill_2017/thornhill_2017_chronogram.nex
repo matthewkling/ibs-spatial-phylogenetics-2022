@@ -1,0 +1,2179 @@
+#NEXUS
+[R-package APE, Thu Oct  6 14:07:04 2022]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 1083;
+	TAXLABELS
+		Isoetes
+		Selaginella
+		Lycopodium
+		Lycopodiella
+		Equisetum_1
+		Equisetum_2
+		Ophioglossum
+		Botrypus
+		Sceptridium
+		Botrychium
+		Azolla
+		Pilularia
+		Marsilea
+		Cryptogramma
+		Adiantum_1
+		Adiantum_2
+		Notholaena
+		Pentagramma
+		Aspidotis
+		Cheilanthes
+		Pellaea_1
+		Astrolepis
+		Argyrochosma
+		Pellaea_2
+		Pteridium
+		Polypodium
+		Polystichum
+		Dryopteris_1
+		Dryopteris_2
+		Thelypteris
+		Asplenium
+		Cystopteris
+		Woodsia
+		Athyrium
+		Blechnum
+		Woodwardia
+		Ephedra_2
+		Ephedra_1
+		Ephedra_3
+		Taxus
+		Torreya
+		Sequoiadendron
+		Sequoia
+		Thuja
+		Chamaecyparis
+		Calocedrus
+		Juniperus_2
+		Juniperus_1
+		Callitropsis
+		Hesperocyparis_2
+		Hesperocyparis_1
+		Tsuga
+		Abies_1
+		Abies_3
+		Abies_2
+		Pseudotsuga
+		Picea_1
+		Picea_2
+		Pinus_Contortae
+		Pinus_Attenuatae
+		Pinus_Ponderosae
+		Pinus_Strobus
+		Pinus_Cembroides
+		Pinus_Balfournianae
+		Nuphar
+		Brasenia
+		Ceratophyllum
+		Triantha
+		Lysichiton
+		Spirodela
+		Landoltia
+		Lemna_1
+		Lemna_2
+		Wolffia
+		Wolffiella
+		Najas
+		Elodea
+		Alisma
+		Damasonium
+		Sagittaria
+		Echinodorus
+		Scheuchzeria
+		Triglochin
+		Ruppia
+		Zostera
+		Phyllospadix
+		Potamogeton_1
+		Potamogeton_2
+		Zannichellia
+		Stuckenia_1
+		Stuckenia_2
+		Narthecium
+		Veratrum_1
+		Veratrum_2
+		Stenanthium
+		Toxicoscordion
+		Xerophyllum
+		Pseudotrillium
+		Trillium_2
+		Trillium_1
+		Smilax
+		Streptopus
+		Scoliopus
+		Prosartes
+		Clintonia
+		Erythronium
+		Fritillaria
+		Lilium
+		Calochortus_Coast_Ranges__Sierra_Nevada__SW_CA
+		Calochortus_Great_Basin__Rocky_Mountains
+		Calochortus_Bay_Area__Pacific_NW
+		Calochortus_San_Diego
+		Cypripedium_2
+		Cypripedium_1
+		Cypripedium_3
+		Piperia
+		Platanthera
+		Goodyera
+		Spiranthes
+		Epipactis
+		Cephalanthera
+		Listera
+		Malaxis
+		Calypso
+		Corallorhiza_2
+		Corallorhiza_1
+		Odontostomum
+		Iris
+		Sisyrinchium
+		Olsynium
+		Allium_haematochiton_clade
+		Allium_sanbornii__campanulatum
+		Allium_falcifolium_clade
+		Allium_acuminatum_clade
+		Allium_validum_clade
+		Maianthemum
+		Nolina
+		Brodiaea__Dichelostemma
+		Dichelostemma_Capitatum
+		Bloomeria__Triteleia
+		Androstephium
+		Muilla
+		Leucocrinum
+		Agave
+		Yucca_1
+		Yucca_2
+		Hesperoyucca
+		Hesperocallis
+		Chlorogalum_2
+		Camassia
+		Hastingsia
+		Chlorogalum_3
+		Chlorogalum_1
+		Washingtonia
+		Heteranthera
+		Typha_1
+		Typha_2
+		Sparganium_Xanthosparganium
+		Sparganium_Sparganium
+		Juncus
+		Luzula
+		Cladium
+		Schoenus
+		Rhynchospora
+		Dulichium
+		Calliscirpus
+		Carex__Kobresia
+		Trichophorum
+		Amphiscirpus
+		Eriophorum
+		Scirpus
+		Fimbristylis
+		Bulbostylis
+		Eleocharis_1
+		Eleocharis_2
+		Bolboschoenus
+		Schoenoplectus
+		Cyperus__Lipocarpha
+		Isolepis
+		Leersia
+		Stipa_Stillmannii
+		Stipa_Piptatheropsis
+		Stipa_Hesperostipa
+		Stipa_Pappostipa
+		Stipa_Achnatherum
+		Melica
+		Glyceria
+		Pleuropogon
+		Bromus
+		Elymus__Hordeum
+		Anthoxanthum
+		Sphenopholis
+		Trisetum
+		Koeleria
+		Phalaris_2
+		Phalaris_1
+		Torreyochloa
+		Agrostis
+		Calamagrostis
+		Festuca
+		Vahlodea
+		Scribneria
+		Deschampsia
+		Puccinellia
+		Dissanthelium__Poa
+		Phleum
+		Cinna_1
+		Cinna_2
+		Alopecurus
+		Beckmannia
+		Phragmites
+		Danthonia
+		Aristida
+		Echinochloa
+		Setaria
+		Panicum
+		Eriochloa
+		Paspalum
+		Imperata
+		Andropogon
+		Bothriochloa
+		Digitaria
+		Enneapogon
+		Sporobolus__Eragrostis
+		Spartina
+		Tridens
+		Orcuttia__Tuctoria__Neostapfia
+		Leptochloa_3
+		Leptochloa_4
+		Leptochloa_1
+		Leptochloa_2
+		Muhlenbergia
+		Bouteloua
+		Distichlis
+		Hilaria
+		Scleropogon
+		Blepharidachne
+		Swallenia
+		Erioneuron
+		Munroa
+		Dasyochloa
+		Calycanthus
+		Umbellularia
+		Anemopsis
+		Aristolochia
+		Asarum
+		Platanus
+		Ehrendorferia
+		Dicentra
+		Corydalis
+		Dendromecon
+		Eschscholzia
+		Papaver
+		Arctomecon
+		Argemone
+		Romneya
+		Canbya
+		Meconella
+		Platystemon
+		Hesperomecon
+		Vancouveria
+		Achlys
+		Berberis_2
+		Berberis_3
+		Berberis_1
+		Coptis
+		Aconitum
+		Delphinium
+		Enemion
+		Thalictrum_2
+		Thalictrum_1
+		Aquilegia_2
+		Aquilegia_1
+		Caltha
+		Actaea
+		Clematis
+		Anemone
+		Myosurus
+		Ranunculus_2
+		Trautvetteria
+		Ranunculus_1
+		Paeonia
+		Myriophyllum
+		Crassula
+		Rhodiola
+		Sedum
+		Dudleya
+		Sedella
+		Ribes_Symphocalyx
+		Ribes_Coreosma
+		Ribes_Heritiera
+		Ribes_Grossularioides
+		Ribes_Grossularia
+		Ribes_Viburnifolium
+		Ribes_Calobotrya
+		Saxifraga_2
+		Saxifraga_1
+		Jepsonia
+		Bolandra
+		Hemieva
+		Boykinia_2
+		Boykinia_1
+		Saxifragopsis
+		Chrysosplenium
+		Darmera
+		Cascadia
+		Micranthes
+		Mitellastra
+		Pectiantia_1
+		Tolmiea
+		Bensoniella
+		Lithophragma
+		Heuchera
+		Pectiantia_2
+		Tellima
+		Tiarella
+		Ozomelis
+		Vitis
+		Geranium
+		Erodium
+		California
+		Staphylea
+		Crossosoma
+		Glossopetalon
+		Rotala
+		Lythrum
+		Ammannia
+		Ludwigia
+		Circaea
+		Taraxia_2
+		Taraxia_1
+		Camissonia
+		Eulobus
+		Oenothera
+		Chylismia
+		Neoholmgrenia
+		Camissoniopsis
+		Tetrapteron
+		Eremothera
+		Chamerion
+		Epilobium_xerophytic
+		Epilobium_Epilobium
+		Chylismiella
+		Gayophytum
+		Clarkia_Eucharidium
+		Clarkia_Myxocarpa
+		Clarkia_Rhodanthos
+		Clarkia_Sympherica__Godetia__Phaeostoma
+		Clarkia_Fibula
+		Castela
+		Thamnosma
+		Cneoridium
+		Ptelea
+		Acer
+		Aesculus
+		Bursera
+		Malosma
+		Toxicodendron
+		Rhus_2
+		Rhus_1
+		Dirca
+		Ayenia
+		Fremontodendron
+		Hibiscus
+		Malvella
+		Herissantia
+		Horsfordia
+		Abutilon
+		Malva
+		Malacothamnus
+		Eremalche_1
+		Sphaeralcea
+		Iliamna_2
+		Eremalche_2
+		Sidalcea
+		Crocanthemum
+		Limnanthes
+		Floerkea
+		Batis
+		Koeberlinia
+		Oligomeris
+		Polanisia
+		Carsonia
+		Cleomella_pro_parte__Oxystylis__Wislizenia
+		Peritoma__
+		Idahoa
+		Cochlearia
+		Subularia
+		Noccaea
+		Arabis
+		Athysanus__Draba_1
+		Draba_2
+		Thelypodeae_Guillenia
+		Thelypodeae_Streptanthus
+		Sibara
+		Thysanocarpus
+		Thelypodeae_Caulanthus
+		Sibaropsis
+		Hesperidanthus
+		Thelypodeae_Thelypodium
+		Streptanthella
+		Lepidium
+		Smelowskia
+		Descurainia
+		Tropidocarpum
+		Cardamine
+		Nasturtium
+		Barbarea
+		Rorippa
+		Planodes
+		Physaria
+		Dithyrea
+		Lyrocarpa
+		Transberingia
+		Turritis
+		Erysimum
+		Halimolobos
+		Cusickiella
+		Polyctenium
+		Anelsonia
+		Phoenicaulis
+		Boechera_main_clade
+		Boechera_repanda_clade
+		Krameria
+		Kallstroemia
+		Larrea
+		Fagonia
+		Oxalis
+		Mortonia
+		Parnassia
+		Paxistima
+		Euonymus
+		Hesperolinon__
+		Tetracoccus
+		Hypericum
+		Viola
+		Populus_1
+		Populus_2
+		Salix_Salix
+		Salix_Vetrix
+		Bergia
+		Elatine
+		Croton
+		Acalypha
+		Ditaxis
+		Tragia
+		Bernardia
+		Stillingia
+		Euphorbia_Tithyanus
+		Euphorbia_Helioscopia
+		Euphorbia_Anisophyllum
+		Euphorbia_Misera
+		Euphorbia_Poinsettia
+		Polygala_2
+		Polygala_1
+		Polygala_3
+		Cercis
+		Hoffmannseggia
+		Parkinsonia
+		Senna
+		Prosopis
+		Senegalia
+		Calliandra
+		Pickeringia
+		Thermopsis
+		Lupinus_petioled
+		Lupinus_sessile
+		Amorpha
+		Psorothamnus_1
+		Psorothamnus_2
+		Marina
+		Dalea
+		Phaseolus
+		Hoita
+		Rupertia
+		Ladeania
+		Pediomelum
+		Hosackia
+		Acmispon
+		Sesbania
+		Robinia
+		Olneya
+		Peteria
+		Glycyrrhiza
+		Oxytropis
+		Astragalus_Neoastragalus
+		Astragalus_agrestis_clade
+		Astragalus_canadensis_clade
+		Vicia
+		Lathyrus
+		Trifolium_2
+		Trifolium_4
+		Trifolium_3
+		Trifolium_8
+		Trifolium_11
+		Trifolium_12
+		Trifolium_5
+		Trifolium_7
+		Trifolium_9
+		Trifolium_10
+		Trifolium_1
+		Trifolium_6
+		Pilostyles
+		Datisca
+		Brandegea
+		Marah
+		Cucurbita_2
+		Cucurbita_1
+		Chrysolepis
+		Notholithocarpus
+		Quercus_intermediate
+		Quercus_white
+		Quercus_red
+		Myrica
+		Morella
+		Juglans
+		Corylus
+		Betula
+		Alnus_Gymnothyrsus
+		Alnus_Alnobetula
+		Celtis
+		Parietaria
+		Urtica__Hesperocnide
+		Shepherdia
+		Colubrina
+		Ceanothus_Ceanothus
+		Ceanothus_Cerastes
+		Ziziphus
+		Adolphia
+		Frangula
+		Condalia
+		Rhamnus
+		Lyonothamnus
+		Oemleria
+		Coleogyne
+		Neviusia
+		Physocarpus
+		Prunus
+		Crataegus
+		Peraphyllum
+		Amelanchier
+		Sorbus
+		Heteromeles
+		Malus
+		Chamaebatiaria
+		Adenostoma
+		Spiraea
+		Petrophytum
+		Holodiscus
+		Aruncus
+		Luetkea
+		Cercocarpus
+		Chamaebatia
+		Purshia
+		Rubus
+		Geum
+		Fallugia
+		Rosa
+		Agrimonia
+		Poteridium
+		Sanguisorba
+		Acaena
+		Potentilla_2
+		Potentilla_3
+		Horkelia__Horkeliella__Ivesia
+		Potentilla_1
+		Sibbaldia
+		Comarum
+		Aphanes
+		Drymocallis
+		Dasiphora
+		Fragaria_1
+		Fragaria_2
+		Comandra
+		Arceuthobium
+		Phoradendron_2
+		Phoradendron_1
+		Drosera
+		Frankenia
+		Armeria
+		Limonium
+		Polygonum
+		Rumex
+		Oxyria
+		Persicaria
+		Bistorta
+		Aconogonon
+		Eriogonoideae_Gilmania
+		Eriogonoideae_Pterostegieae
+		Eriogonoideae_Dedeckera__
+		Eriogonoideae_Sidotheca
+		Eriogonoideae_Eriogonum__
+		Eriogonoideae_Lastarriaea
+		Eriogonoideae_Oxytheca__
+		Simmondsia
+		Trianthema
+		Sesuvium
+		Sarcobatus
+		Boerhavia_2
+		Boerhavia_1
+		Anulocaulis
+		Allionia
+		Mirabilis
+		Abronia__Tripterocalyx
+		Acleisanthes
+		Portulaca
+		Calyptridium
+		Calandrinia
+		Cistanthe
+		Lewisia
+		Montia
+		Claytonia
+		Cylindropuntia__Grusonia
+		Opuntia
+		Bergerocactus
+		Carnegiea
+		Echinocereus
+		Echinocactus__Ferocactus
+		Sclerocactus
+		Mammillaria
+		Coryphantha
+		Paronychia
+		Loeflingia
+		Cardionema
+		Polycarpon
+		Scopulophila
+		Achyronychia
+		Spergularia
+		Eremogone
+		Silene_1
+		Silene_2
+		Minuartia__Sagina
+		Moehringia
+		Arenaria
+		Pseudostellaria
+		Cerastium
+		Stellaria
+		Nitrophila
+		Amaranthus
+		Tidestromia
+		Aphanisma
+		Kochia
+		Allenrolfea
+		Arthrocnemum
+		Suaeda_2
+		Salicornia
+		Suaeda_1
+		Krascheninnikovia
+		Corispermum
+		Chenopodium_3
+		Chenopodium_4__5
+		Chenopodium_7
+		Atriplex
+		Stutzia
+		Extriplex
+		Grayia
+		Cornus_2
+		Cornus_1
+		Cornus_3
+		Jamesia
+		Whipplea
+		Fendlerella
+		Philadelphus
+		Carpenteria
+		Eucnide
+		Petalonyx
+		Mentzelia_Micromentzelia
+		Mentzelia_Trachyphytum
+		Mentzelia_Bartonia
+		Mentzelia_Bicuspidaria
+		Styrax
+		Darlingtonia
+		Orthilia
+		Pyrola
+		Chimaphila
+		Moneses
+		Cassiope
+		Vaccinium
+		Gaultheria
+		Leucothoe
+		Empetrum
+		Phyllodoce
+		Kalmia
+		Rhododendron
+		Menziesia
+		Arctostaphylos
+		Ornithostaphylos
+		Comarostaphylis
+		Xylococcus
+		Arbutus
+		Sarcodes
+		Pterospora
+		Pleuricospora
+		Monotropa_2
+		Monotropa_1
+		Pityopus
+		Allotropa
+		Hemitomes
+		Samolus
+		Anagallis
+		Trientalis
+		Glaux
+		Lysimachia
+		Androsace_1
+		Androsace_2
+		Primula_2
+		Primula_1
+		Fouquieria
+		Aliciella
+		Ipomopsis_1
+		Ipomopsis_3
+		Ipomopsis_2
+		Eriastrum
+		Langloisia
+		Loeseliastrum_1
+		Loeseliastrum_2
+		Polemonium
+		Linanthus_2
+		Linanthus_1
+		Gymnosteris
+		Phlox__Microsteris
+		Leptosiphon
+		Saltugilia
+		Lathrocasis
+		Gilia_Arachnion
+		Gilia_Saltugilia
+		Gilia_Gilia
+		Allophyllum
+		Collomia_1
+		Collomia_2
+		Collomia_3
+		Navarretia_1
+		Navarretia_2
+		Garrya
+		Cephalanthus
+		Kelloggia
+		Galium
+		Amsonia
+		Cycladenia
+		Apocynum
+		Matelea
+		Asclepias
+		Funastrum
+		Cicendia
+		Zeltnera
+		Eustoma
+		Gentiana
+		Gentianopsis
+		Frasera
+		Swertia
+		Gentianella
+		Comastoma
+		Lithospermum
+		Mertensia
+		Hackelia__Lappula
+		Myosotis
+		Cynoglossum
+		Plagiobothrys_Sonnea
+		Pectocarya__Harpagonella
+		Plagiobothrys_Allocarya__
+		Oreocarya
+		Cryptantha
+		Eremocarya
+		Plagiobothrys_Amsinckiopsis__
+		Johnstonella
+		Greeneocharis
+		Heliotropium
+		Pholisma
+		Tiquilia_Tiquilia
+		Tiquilia_Eddya
+		Nama_2
+		Nama_1
+		Draperia
+		Tricardia
+		Hesperochiron
+		Howellanthus
+		Emmenanthe
+		Eucrypta_2
+		Eucrypta_1
+		Hydrophyllum
+		Pholistoma
+		Nemophila
+		Phacelia_Pulchellae
+		Romanzoffia
+		Phacelia_Pachyphyllae
+		Phacelia_Euglypta__
+		Phacelia_Eutoca__Cosmantha
+		Phacelia_Glandulosae
+		Phacelia_Ramosissimae
+		Phacelia_Baretiana
+		Phacelia_Phacelia
+		Phacelia_Whitlavia
+		Phacelia_Gymnobytha
+		Cuscuta_2
+		Cuscuta_1
+		Dichondra
+		Cressa
+		Convolvulus
+		Calystegia
+		Petunia
+		Nicotiana_Polydicliae__Trigonophyllae
+		Nicotiana_Petunioides
+		Lycium
+		Datura
+		Oryctes
+		Physalis
+		Chamaesaracha
+		Solanum_Californian
+		Solanum_Americanum
+		Solanum_Douglasii
+		Menodora
+		Forestiera
+		Fraxinus_2
+		Fraxinus_1
+		Bacopa
+		Gratiola
+		Penstemon
+		Tonella
+		Collinsia
+		Nothochelone
+		Keckiella_1
+		Keckiella_3
+		Keckiella_2
+		Callitriche
+		Hippuris
+		Plantago
+		Veronica__Synthyris
+		Nuttallanthus
+		Gambelia
+		Pseudorontium
+		Antirrhinum__Mohavea
+		Stemodia
+		Holmgrenanthe
+		Maurandella
+		Buddleja
+		Limosella
+		Scrophularia_1
+		Scrophularia_2
+		Lindernia
+		Proboscidea
+		Chilopsis
+		Pinguicula
+		Utricularia
+		Verbena
+		Phyla
+		Aloysia
+		Mimulus_Mimulus
+		Mimulus_Diplacus
+		Mimulus_Erythranthe
+		Mimulus_Mimetanthe
+		Kopsiopsis
+		Orobanche_Myzorrhiza
+		Orobanche_Gymnocaulis
+		Pedicularis
+		Cordylanthus
+		Orthocarpus
+		Chloropyron
+		Dicranostegia
+		Castilleja_2
+		Castilleja_1
+		Castilleja_3
+		Castilleja_4
+		Triphysaria_2
+		Triphysaria_1
+		Justicia
+		Carlowrightia
+		Scutellaria
+		Stachys
+		Teucrium
+		Trichostema
+		Condea
+		Salvia
+		Lepechinia
+		Prunella
+		Lycopus
+		Agastache
+		Mentha
+		Poliomintha
+		Monarda
+		Pycnanthemum
+		Hedeoma
+		Clinopodium
+		Pogogyne
+		Monardella
+		Acanthomintha
+		Viburnum
+		Sambucus
+		Symphoricarpos
+		Lonicera
+		Linnaea
+		Plectritis
+		Valeriana
+		Aralia
+		Hydrocotyle
+		Bowlesia
+		Eryngium
+		Sanicula_2
+		Sanicula_3
+		Sanicula_1
+		Cicuta
+		Perideridia
+		Sium
+		Berula
+		Oxypolis
+		Oenanthe
+		Lilaeopsis
+		Ligusticum
+		Osmorhiza
+		Daucus
+		Yabea
+		Heracleum
+		Conioselinum
+		Apiastrum
+		Glehnia
+		Angelica__
+		Tauschia
+		Spermolepis
+		Lomatium__
+		Nemacladus
+		Campanula__
+		Campanula_Scabrella
+		Campanula_Rotundifolia
+		Porterella
+		Downingia
+		Lobelia
+		Howellia
+		Legenere
+		Menyanthes
+		Hecastocleis
+		Adenocaulon
+		Acourtia
+		Trixis
+		Cirsium
+		Saussurea
+		Crepis
+		Lactuca
+		Taraxacum
+		Hieracium
+		Phalacroseris
+		Chaetadelpha
+		Glyptopleura
+		Pleiacanthus
+		Prenanthella
+		Stephanomeria
+		Rafinesquia
+		Munzothamnus
+		Malacothrix_1
+		Malacothrix_2
+		Agoseris
+		Nothocalais
+		Microseris__
+		Blennosperma
+		Crocidium
+		Tetradymia__Lepidospartum
+		Cacaliopsis
+		Luina
+		Petasites
+		Packera
+		Senecio
+		Gnaphalium
+		Anaphalis
+		Pseudognaphalium
+		Antennaria
+		Gamochaeta
+		Logfia
+		Stylocline
+		Psilocarphus
+		Micropus
+		Ancistrocarphus
+		Hesperevax
+		Artemisia_Abrotanum
+		Artemisia_Tridentatae
+		Artemisia_Artemisia
+		Artemisia_Dracunculus
+		Baccharis
+		Laennecia
+		Eucephalus
+		Pentachaeta__Rigiopappus__Tracyina
+		Ericameria
+		Cuniculotinus
+		Chrysothamnus__
+		Sericocarpus
+		Ionactis
+		Townsendia
+		Monoptilon
+		Chaetopappa
+		Gutierrezia
+		Euthamia
+		Erigeron
+		Heterotheca
+		Chloracantha
+		Symphyotrichum__Almutaster
+		Oreostemma
+		Eurybia
+		Xylorhiza
+		Leucosyris
+		Dieteria
+		Machaeranthera
+		Isocoma
+		Grindelia
+		Hazardia
+		Xanthisma
+		Pyrrocoma
+		Benitoa
+		Corethrogyne
+		Lessingia
+		Pluchea
+		Trichoptilium
+		Psathyrotes
+		Helenium
+		Hymenoxys
+		Baileya_1
+		Baileya_2
+		Tetraneuris
+		Psilostrophe
+		Leptosyne
+		Bidens
+		Adenophyllum
+		Thymophylla
+		Nicolletia
+		Pectis
+		Porophyllum
+		Eclipta
+		Verbesina
+		Wyethia__Balsamorhiza
+		Rudbeckia
+		Sanvitalia
+		Bahiopsis
+		Heliomeris
+		Helianthus
+		Viguiera
+		Encelia_2
+		Encelia_1
+		Helianthella
+		Enceliopsis
+		Geraea
+		Iva
+		Xanthium
+		Dicoria
+		Ambrosia
+		Euphrosyne
+		Jaumea
+		Chaenactis
+		Orochaenactis
+		Dimeresia
+		Peucephyllum
+		Hymenopappus
+		Bahia
+		Palafoxia
+		Amauriopsis__Hymenothrix
+		Bebbia
+		Pericome
+		Perityle
+		Trichocoronis
+		Ageratina
+		Malperia
+		Brickellia
+		Pleurocoronis
+		Venegasia
+		Eriophyllum__
+		Eatonella
+		Hulsea
+		Monolopia
+		Constancea
+		Amblyopappus
+		Lasthenia_2
+		Lasthenia_1
+		Arnica
+		Blepharipappus
+		Raillardella
+		Achyrachaena
+		Layia
+		Lagophylla
+		Holozonia
+		Madia_lineage
+		Centromadia
+		Deinandra
+		Blepharizonia__Hemizonia
+		Calycadenia__Osmadenia
+		Holocarpha
+		Achillea
+		Tanacetum
+		Matricaria
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Isoetes,
+		2	Selaginella,
+		3	Lycopodium,
+		4	Lycopodiella,
+		5	Equisetum_1,
+		6	Equisetum_2,
+		7	Ophioglossum,
+		8	Botrypus,
+		9	Sceptridium,
+		10	Botrychium,
+		11	Azolla,
+		12	Pilularia,
+		13	Marsilea,
+		14	Cryptogramma,
+		15	Adiantum_1,
+		16	Adiantum_2,
+		17	Notholaena,
+		18	Pentagramma,
+		19	Aspidotis,
+		20	Cheilanthes,
+		21	Pellaea_1,
+		22	Astrolepis,
+		23	Argyrochosma,
+		24	Pellaea_2,
+		25	Pteridium,
+		26	Polypodium,
+		27	Polystichum,
+		28	Dryopteris_1,
+		29	Dryopteris_2,
+		30	Thelypteris,
+		31	Asplenium,
+		32	Cystopteris,
+		33	Woodsia,
+		34	Athyrium,
+		35	Blechnum,
+		36	Woodwardia,
+		37	Ephedra_2,
+		38	Ephedra_1,
+		39	Ephedra_3,
+		40	Taxus,
+		41	Torreya,
+		42	Sequoiadendron,
+		43	Sequoia,
+		44	Thuja,
+		45	Chamaecyparis,
+		46	Calocedrus,
+		47	Juniperus_2,
+		48	Juniperus_1,
+		49	Callitropsis,
+		50	Hesperocyparis_2,
+		51	Hesperocyparis_1,
+		52	Tsuga,
+		53	Abies_1,
+		54	Abies_3,
+		55	Abies_2,
+		56	Pseudotsuga,
+		57	Picea_1,
+		58	Picea_2,
+		59	Pinus_Contortae,
+		60	Pinus_Attenuatae,
+		61	Pinus_Ponderosae,
+		62	Pinus_Strobus,
+		63	Pinus_Cembroides,
+		64	Pinus_Balfournianae,
+		65	Nuphar,
+		66	Brasenia,
+		67	Ceratophyllum,
+		68	Triantha,
+		69	Lysichiton,
+		70	Spirodela,
+		71	Landoltia,
+		72	Lemna_1,
+		73	Lemna_2,
+		74	Wolffia,
+		75	Wolffiella,
+		76	Najas,
+		77	Elodea,
+		78	Alisma,
+		79	Damasonium,
+		80	Sagittaria,
+		81	Echinodorus,
+		82	Scheuchzeria,
+		83	Triglochin,
+		84	Ruppia,
+		85	Zostera,
+		86	Phyllospadix,
+		87	Potamogeton_1,
+		88	Potamogeton_2,
+		89	Zannichellia,
+		90	Stuckenia_1,
+		91	Stuckenia_2,
+		92	Narthecium,
+		93	Veratrum_1,
+		94	Veratrum_2,
+		95	Stenanthium,
+		96	Toxicoscordion,
+		97	Xerophyllum,
+		98	Pseudotrillium,
+		99	Trillium_2,
+		100	Trillium_1,
+		101	Smilax,
+		102	Streptopus,
+		103	Scoliopus,
+		104	Prosartes,
+		105	Clintonia,
+		106	Erythronium,
+		107	Fritillaria,
+		108	Lilium,
+		109	Calochortus_Coast_Ranges__Sierra_Nevada__SW_CA,
+		110	Calochortus_Great_Basin__Rocky_Mountains,
+		111	Calochortus_Bay_Area__Pacific_NW,
+		112	Calochortus_San_Diego,
+		113	Cypripedium_2,
+		114	Cypripedium_1,
+		115	Cypripedium_3,
+		116	Piperia,
+		117	Platanthera,
+		118	Goodyera,
+		119	Spiranthes,
+		120	Epipactis,
+		121	Cephalanthera,
+		122	Listera,
+		123	Malaxis,
+		124	Calypso,
+		125	Corallorhiza_2,
+		126	Corallorhiza_1,
+		127	Odontostomum,
+		128	Iris,
+		129	Sisyrinchium,
+		130	Olsynium,
+		131	Allium_haematochiton_clade,
+		132	Allium_sanbornii__campanulatum,
+		133	Allium_falcifolium_clade,
+		134	Allium_acuminatum_clade,
+		135	Allium_validum_clade,
+		136	Maianthemum,
+		137	Nolina,
+		138	Brodiaea__Dichelostemma,
+		139	Dichelostemma_Capitatum,
+		140	Bloomeria__Triteleia,
+		141	Androstephium,
+		142	Muilla,
+		143	Leucocrinum,
+		144	Agave,
+		145	Yucca_1,
+		146	Yucca_2,
+		147	Hesperoyucca,
+		148	Hesperocallis,
+		149	Chlorogalum_2,
+		150	Camassia,
+		151	Hastingsia,
+		152	Chlorogalum_3,
+		153	Chlorogalum_1,
+		154	Washingtonia,
+		155	Heteranthera,
+		156	Typha_1,
+		157	Typha_2,
+		158	Sparganium_Xanthosparganium,
+		159	Sparganium_Sparganium,
+		160	Juncus,
+		161	Luzula,
+		162	Cladium,
+		163	Schoenus,
+		164	Rhynchospora,
+		165	Dulichium,
+		166	Calliscirpus,
+		167	Carex__Kobresia,
+		168	Trichophorum,
+		169	Amphiscirpus,
+		170	Eriophorum,
+		171	Scirpus,
+		172	Fimbristylis,
+		173	Bulbostylis,
+		174	Eleocharis_1,
+		175	Eleocharis_2,
+		176	Bolboschoenus,
+		177	Schoenoplectus,
+		178	Cyperus__Lipocarpha,
+		179	Isolepis,
+		180	Leersia,
+		181	Stipa_Stillmannii,
+		182	Stipa_Piptatheropsis,
+		183	Stipa_Hesperostipa,
+		184	Stipa_Pappostipa,
+		185	Stipa_Achnatherum,
+		186	Melica,
+		187	Glyceria,
+		188	Pleuropogon,
+		189	Bromus,
+		190	Elymus__Hordeum,
+		191	Anthoxanthum,
+		192	Sphenopholis,
+		193	Trisetum,
+		194	Koeleria,
+		195	Phalaris_2,
+		196	Phalaris_1,
+		197	Torreyochloa,
+		198	Agrostis,
+		199	Calamagrostis,
+		200	Festuca,
+		201	Vahlodea,
+		202	Scribneria,
+		203	Deschampsia,
+		204	Puccinellia,
+		205	Dissanthelium__Poa,
+		206	Phleum,
+		207	Cinna_1,
+		208	Cinna_2,
+		209	Alopecurus,
+		210	Beckmannia,
+		211	Phragmites,
+		212	Danthonia,
+		213	Aristida,
+		214	Echinochloa,
+		215	Setaria,
+		216	Panicum,
+		217	Eriochloa,
+		218	Paspalum,
+		219	Imperata,
+		220	Andropogon,
+		221	Bothriochloa,
+		222	Digitaria,
+		223	Enneapogon,
+		224	Sporobolus__Eragrostis,
+		225	Spartina,
+		226	Tridens,
+		227	Orcuttia__Tuctoria__Neostapfia,
+		228	Leptochloa_3,
+		229	Leptochloa_4,
+		230	Leptochloa_1,
+		231	Leptochloa_2,
+		232	Muhlenbergia,
+		233	Bouteloua,
+		234	Distichlis,
+		235	Hilaria,
+		236	Scleropogon,
+		237	Blepharidachne,
+		238	Swallenia,
+		239	Erioneuron,
+		240	Munroa,
+		241	Dasyochloa,
+		242	Calycanthus,
+		243	Umbellularia,
+		244	Anemopsis,
+		245	Aristolochia,
+		246	Asarum,
+		247	Platanus,
+		248	Ehrendorferia,
+		249	Dicentra,
+		250	Corydalis,
+		251	Dendromecon,
+		252	Eschscholzia,
+		253	Papaver,
+		254	Arctomecon,
+		255	Argemone,
+		256	Romneya,
+		257	Canbya,
+		258	Meconella,
+		259	Platystemon,
+		260	Hesperomecon,
+		261	Vancouveria,
+		262	Achlys,
+		263	Berberis_2,
+		264	Berberis_3,
+		265	Berberis_1,
+		266	Coptis,
+		267	Aconitum,
+		268	Delphinium,
+		269	Enemion,
+		270	Thalictrum_2,
+		271	Thalictrum_1,
+		272	Aquilegia_2,
+		273	Aquilegia_1,
+		274	Caltha,
+		275	Actaea,
+		276	Clematis,
+		277	Anemone,
+		278	Myosurus,
+		279	Ranunculus_2,
+		280	Trautvetteria,
+		281	Ranunculus_1,
+		282	Paeonia,
+		283	Myriophyllum,
+		284	Crassula,
+		285	Rhodiola,
+		286	Sedum,
+		287	Dudleya,
+		288	Sedella,
+		289	Ribes_Symphocalyx,
+		290	Ribes_Coreosma,
+		291	Ribes_Heritiera,
+		292	Ribes_Grossularioides,
+		293	Ribes_Grossularia,
+		294	Ribes_Viburnifolium,
+		295	Ribes_Calobotrya,
+		296	Saxifraga_2,
+		297	Saxifraga_1,
+		298	Jepsonia,
+		299	Bolandra,
+		300	Hemieva,
+		301	Boykinia_2,
+		302	Boykinia_1,
+		303	Saxifragopsis,
+		304	Chrysosplenium,
+		305	Darmera,
+		306	Cascadia,
+		307	Micranthes,
+		308	Mitellastra,
+		309	Pectiantia_1,
+		310	Tolmiea,
+		311	Bensoniella,
+		312	Lithophragma,
+		313	Heuchera,
+		314	Pectiantia_2,
+		315	Tellima,
+		316	Tiarella,
+		317	Ozomelis,
+		318	Vitis,
+		319	Geranium,
+		320	Erodium,
+		321	California,
+		322	Staphylea,
+		323	Crossosoma,
+		324	Glossopetalon,
+		325	Rotala,
+		326	Lythrum,
+		327	Ammannia,
+		328	Ludwigia,
+		329	Circaea,
+		330	Taraxia_2,
+		331	Taraxia_1,
+		332	Camissonia,
+		333	Eulobus,
+		334	Oenothera,
+		335	Chylismia,
+		336	Neoholmgrenia,
+		337	Camissoniopsis,
+		338	Tetrapteron,
+		339	Eremothera,
+		340	Chamerion,
+		341	Epilobium_xerophytic,
+		342	Epilobium_Epilobium,
+		343	Chylismiella,
+		344	Gayophytum,
+		345	Clarkia_Eucharidium,
+		346	Clarkia_Myxocarpa,
+		347	Clarkia_Rhodanthos,
+		348	Clarkia_Sympherica__Godetia__Phaeostoma,
+		349	Clarkia_Fibula,
+		350	Castela,
+		351	Thamnosma,
+		352	Cneoridium,
+		353	Ptelea,
+		354	Acer,
+		355	Aesculus,
+		356	Bursera,
+		357	Malosma,
+		358	Toxicodendron,
+		359	Rhus_2,
+		360	Rhus_1,
+		361	Dirca,
+		362	Ayenia,
+		363	Fremontodendron,
+		364	Hibiscus,
+		365	Malvella,
+		366	Herissantia,
+		367	Horsfordia,
+		368	Abutilon,
+		369	Malva,
+		370	Malacothamnus,
+		371	Eremalche_1,
+		372	Sphaeralcea,
+		373	Iliamna_2,
+		374	Eremalche_2,
+		375	Sidalcea,
+		376	Crocanthemum,
+		377	Limnanthes,
+		378	Floerkea,
+		379	Batis,
+		380	Koeberlinia,
+		381	Oligomeris,
+		382	Polanisia,
+		383	Carsonia,
+		384	Cleomella_pro_parte__Oxystylis__Wislizenia,
+		385	Peritoma__,
+		386	Idahoa,
+		387	Cochlearia,
+		388	Subularia,
+		389	Noccaea,
+		390	Arabis,
+		391	Athysanus__Draba_1,
+		392	Draba_2,
+		393	Thelypodeae_Guillenia,
+		394	Thelypodeae_Streptanthus,
+		395	Sibara,
+		396	Thysanocarpus,
+		397	Thelypodeae_Caulanthus,
+		398	Sibaropsis,
+		399	Hesperidanthus,
+		400	Thelypodeae_Thelypodium,
+		401	Streptanthella,
+		402	Lepidium,
+		403	Smelowskia,
+		404	Descurainia,
+		405	Tropidocarpum,
+		406	Cardamine,
+		407	Nasturtium,
+		408	Barbarea,
+		409	Rorippa,
+		410	Planodes,
+		411	Physaria,
+		412	Dithyrea,
+		413	Lyrocarpa,
+		414	Transberingia,
+		415	Turritis,
+		416	Erysimum,
+		417	Halimolobos,
+		418	Cusickiella,
+		419	Polyctenium,
+		420	Anelsonia,
+		421	Phoenicaulis,
+		422	Boechera_main_clade,
+		423	Boechera_repanda_clade,
+		424	Krameria,
+		425	Kallstroemia,
+		426	Larrea,
+		427	Fagonia,
+		428	Oxalis,
+		429	Mortonia,
+		430	Parnassia,
+		431	Paxistima,
+		432	Euonymus,
+		433	Hesperolinon__,
+		434	Tetracoccus,
+		435	Hypericum,
+		436	Viola,
+		437	Populus_1,
+		438	Populus_2,
+		439	Salix_Salix,
+		440	Salix_Vetrix,
+		441	Bergia,
+		442	Elatine,
+		443	Croton,
+		444	Acalypha,
+		445	Ditaxis,
+		446	Tragia,
+		447	Bernardia,
+		448	Stillingia,
+		449	Euphorbia_Tithyanus,
+		450	Euphorbia_Helioscopia,
+		451	Euphorbia_Anisophyllum,
+		452	Euphorbia_Misera,
+		453	Euphorbia_Poinsettia,
+		454	Polygala_2,
+		455	Polygala_1,
+		456	Polygala_3,
+		457	Cercis,
+		458	Hoffmannseggia,
+		459	Parkinsonia,
+		460	Senna,
+		461	Prosopis,
+		462	Senegalia,
+		463	Calliandra,
+		464	Pickeringia,
+		465	Thermopsis,
+		466	Lupinus_petioled,
+		467	Lupinus_sessile,
+		468	Amorpha,
+		469	Psorothamnus_1,
+		470	Psorothamnus_2,
+		471	Marina,
+		472	Dalea,
+		473	Phaseolus,
+		474	Hoita,
+		475	Rupertia,
+		476	Ladeania,
+		477	Pediomelum,
+		478	Hosackia,
+		479	Acmispon,
+		480	Sesbania,
+		481	Robinia,
+		482	Olneya,
+		483	Peteria,
+		484	Glycyrrhiza,
+		485	Oxytropis,
+		486	Astragalus_Neoastragalus,
+		487	Astragalus_agrestis_clade,
+		488	Astragalus_canadensis_clade,
+		489	Vicia,
+		490	Lathyrus,
+		491	Trifolium_2,
+		492	Trifolium_4,
+		493	Trifolium_3,
+		494	Trifolium_8,
+		495	Trifolium_11,
+		496	Trifolium_12,
+		497	Trifolium_5,
+		498	Trifolium_7,
+		499	Trifolium_9,
+		500	Trifolium_10,
+		501	Trifolium_1,
+		502	Trifolium_6,
+		503	Pilostyles,
+		504	Datisca,
+		505	Brandegea,
+		506	Marah,
+		507	Cucurbita_2,
+		508	Cucurbita_1,
+		509	Chrysolepis,
+		510	Notholithocarpus,
+		511	Quercus_intermediate,
+		512	Quercus_white,
+		513	Quercus_red,
+		514	Myrica,
+		515	Morella,
+		516	Juglans,
+		517	Corylus,
+		518	Betula,
+		519	Alnus_Gymnothyrsus,
+		520	Alnus_Alnobetula,
+		521	Celtis,
+		522	Parietaria,
+		523	Urtica__Hesperocnide,
+		524	Shepherdia,
+		525	Colubrina,
+		526	Ceanothus_Ceanothus,
+		527	Ceanothus_Cerastes,
+		528	Ziziphus,
+		529	Adolphia,
+		530	Frangula,
+		531	Condalia,
+		532	Rhamnus,
+		533	Lyonothamnus,
+		534	Oemleria,
+		535	Coleogyne,
+		536	Neviusia,
+		537	Physocarpus,
+		538	Prunus,
+		539	Crataegus,
+		540	Peraphyllum,
+		541	Amelanchier,
+		542	Sorbus,
+		543	Heteromeles,
+		544	Malus,
+		545	Chamaebatiaria,
+		546	Adenostoma,
+		547	Spiraea,
+		548	Petrophytum,
+		549	Holodiscus,
+		550	Aruncus,
+		551	Luetkea,
+		552	Cercocarpus,
+		553	Chamaebatia,
+		554	Purshia,
+		555	Rubus,
+		556	Geum,
+		557	Fallugia,
+		558	Rosa,
+		559	Agrimonia,
+		560	Poteridium,
+		561	Sanguisorba,
+		562	Acaena,
+		563	Potentilla_2,
+		564	Potentilla_3,
+		565	Horkelia__Horkeliella__Ivesia,
+		566	Potentilla_1,
+		567	Sibbaldia,
+		568	Comarum,
+		569	Aphanes,
+		570	Drymocallis,
+		571	Dasiphora,
+		572	Fragaria_1,
+		573	Fragaria_2,
+		574	Comandra,
+		575	Arceuthobium,
+		576	Phoradendron_2,
+		577	Phoradendron_1,
+		578	Drosera,
+		579	Frankenia,
+		580	Armeria,
+		581	Limonium,
+		582	Polygonum,
+		583	Rumex,
+		584	Oxyria,
+		585	Persicaria,
+		586	Bistorta,
+		587	Aconogonon,
+		588	Eriogonoideae_Gilmania,
+		589	Eriogonoideae_Pterostegieae,
+		590	Eriogonoideae_Dedeckera__,
+		591	Eriogonoideae_Sidotheca,
+		592	Eriogonoideae_Eriogonum__,
+		593	Eriogonoideae_Lastarriaea,
+		594	Eriogonoideae_Oxytheca__,
+		595	Simmondsia,
+		596	Trianthema,
+		597	Sesuvium,
+		598	Sarcobatus,
+		599	Boerhavia_2,
+		600	Boerhavia_1,
+		601	Anulocaulis,
+		602	Allionia,
+		603	Mirabilis,
+		604	Abronia__Tripterocalyx,
+		605	Acleisanthes,
+		606	Portulaca,
+		607	Calyptridium,
+		608	Calandrinia,
+		609	Cistanthe,
+		610	Lewisia,
+		611	Montia,
+		612	Claytonia,
+		613	Cylindropuntia__Grusonia,
+		614	Opuntia,
+		615	Bergerocactus,
+		616	Carnegiea,
+		617	Echinocereus,
+		618	Echinocactus__Ferocactus,
+		619	Sclerocactus,
+		620	Mammillaria,
+		621	Coryphantha,
+		622	Paronychia,
+		623	Loeflingia,
+		624	Cardionema,
+		625	Polycarpon,
+		626	Scopulophila,
+		627	Achyronychia,
+		628	Spergularia,
+		629	Eremogone,
+		630	Silene_1,
+		631	Silene_2,
+		632	Minuartia__Sagina,
+		633	Moehringia,
+		634	Arenaria,
+		635	Pseudostellaria,
+		636	Cerastium,
+		637	Stellaria,
+		638	Nitrophila,
+		639	Amaranthus,
+		640	Tidestromia,
+		641	Aphanisma,
+		642	Kochia,
+		643	Allenrolfea,
+		644	Arthrocnemum,
+		645	Suaeda_2,
+		646	Salicornia,
+		647	Suaeda_1,
+		648	Krascheninnikovia,
+		649	Corispermum,
+		650	Chenopodium_3,
+		651	Chenopodium_4__5,
+		652	Chenopodium_7,
+		653	Atriplex,
+		654	Stutzia,
+		655	Extriplex,
+		656	Grayia,
+		657	Cornus_2,
+		658	Cornus_1,
+		659	Cornus_3,
+		660	Jamesia,
+		661	Whipplea,
+		662	Fendlerella,
+		663	Philadelphus,
+		664	Carpenteria,
+		665	Eucnide,
+		666	Petalonyx,
+		667	Mentzelia_Micromentzelia,
+		668	Mentzelia_Trachyphytum,
+		669	Mentzelia_Bartonia,
+		670	Mentzelia_Bicuspidaria,
+		671	Styrax,
+		672	Darlingtonia,
+		673	Orthilia,
+		674	Pyrola,
+		675	Chimaphila,
+		676	Moneses,
+		677	Cassiope,
+		678	Vaccinium,
+		679	Gaultheria,
+		680	Leucothoe,
+		681	Empetrum,
+		682	Phyllodoce,
+		683	Kalmia,
+		684	Rhododendron,
+		685	Menziesia,
+		686	Arctostaphylos,
+		687	Ornithostaphylos,
+		688	Comarostaphylis,
+		689	Xylococcus,
+		690	Arbutus,
+		691	Sarcodes,
+		692	Pterospora,
+		693	Pleuricospora,
+		694	Monotropa_2,
+		695	Monotropa_1,
+		696	Pityopus,
+		697	Allotropa,
+		698	Hemitomes,
+		699	Samolus,
+		700	Anagallis,
+		701	Trientalis,
+		702	Glaux,
+		703	Lysimachia,
+		704	Androsace_1,
+		705	Androsace_2,
+		706	Primula_2,
+		707	Primula_1,
+		708	Fouquieria,
+		709	Aliciella,
+		710	Ipomopsis_1,
+		711	Ipomopsis_3,
+		712	Ipomopsis_2,
+		713	Eriastrum,
+		714	Langloisia,
+		715	Loeseliastrum_1,
+		716	Loeseliastrum_2,
+		717	Polemonium,
+		718	Linanthus_2,
+		719	Linanthus_1,
+		720	Gymnosteris,
+		721	Phlox__Microsteris,
+		722	Leptosiphon,
+		723	Saltugilia,
+		724	Lathrocasis,
+		725	Gilia_Arachnion,
+		726	Gilia_Saltugilia,
+		727	Gilia_Gilia,
+		728	Allophyllum,
+		729	Collomia_1,
+		730	Collomia_2,
+		731	Collomia_3,
+		732	Navarretia_1,
+		733	Navarretia_2,
+		734	Garrya,
+		735	Cephalanthus,
+		736	Kelloggia,
+		737	Galium,
+		738	Amsonia,
+		739	Cycladenia,
+		740	Apocynum,
+		741	Matelea,
+		742	Asclepias,
+		743	Funastrum,
+		744	Cicendia,
+		745	Zeltnera,
+		746	Eustoma,
+		747	Gentiana,
+		748	Gentianopsis,
+		749	Frasera,
+		750	Swertia,
+		751	Gentianella,
+		752	Comastoma,
+		753	Lithospermum,
+		754	Mertensia,
+		755	Hackelia__Lappula,
+		756	Myosotis,
+		757	Cynoglossum,
+		758	Plagiobothrys_Sonnea,
+		759	Pectocarya__Harpagonella,
+		760	Plagiobothrys_Allocarya__,
+		761	Oreocarya,
+		762	Cryptantha,
+		763	Eremocarya,
+		764	Plagiobothrys_Amsinckiopsis__,
+		765	Johnstonella,
+		766	Greeneocharis,
+		767	Heliotropium,
+		768	Pholisma,
+		769	Tiquilia_Tiquilia,
+		770	Tiquilia_Eddya,
+		771	Nama_2,
+		772	Nama_1,
+		773	Draperia,
+		774	Tricardia,
+		775	Hesperochiron,
+		776	Howellanthus,
+		777	Emmenanthe,
+		778	Eucrypta_2,
+		779	Eucrypta_1,
+		780	Hydrophyllum,
+		781	Pholistoma,
+		782	Nemophila,
+		783	Phacelia_Pulchellae,
+		784	Romanzoffia,
+		785	Phacelia_Pachyphyllae,
+		786	Phacelia_Euglypta__,
+		787	Phacelia_Eutoca__Cosmantha,
+		788	Phacelia_Glandulosae,
+		789	Phacelia_Ramosissimae,
+		790	Phacelia_Baretiana,
+		791	Phacelia_Phacelia,
+		792	Phacelia_Whitlavia,
+		793	Phacelia_Gymnobytha,
+		794	Cuscuta_2,
+		795	Cuscuta_1,
+		796	Dichondra,
+		797	Cressa,
+		798	Convolvulus,
+		799	Calystegia,
+		800	Petunia,
+		801	Nicotiana_Polydicliae__Trigonophyllae,
+		802	Nicotiana_Petunioides,
+		803	Lycium,
+		804	Datura,
+		805	Oryctes,
+		806	Physalis,
+		807	Chamaesaracha,
+		808	Solanum_Californian,
+		809	Solanum_Americanum,
+		810	Solanum_Douglasii,
+		811	Menodora,
+		812	Forestiera,
+		813	Fraxinus_2,
+		814	Fraxinus_1,
+		815	Bacopa,
+		816	Gratiola,
+		817	Penstemon,
+		818	Tonella,
+		819	Collinsia,
+		820	Nothochelone,
+		821	Keckiella_1,
+		822	Keckiella_3,
+		823	Keckiella_2,
+		824	Callitriche,
+		825	Hippuris,
+		826	Plantago,
+		827	Veronica__Synthyris,
+		828	Nuttallanthus,
+		829	Gambelia,
+		830	Pseudorontium,
+		831	Antirrhinum__Mohavea,
+		832	Stemodia,
+		833	Holmgrenanthe,
+		834	Maurandella,
+		835	Buddleja,
+		836	Limosella,
+		837	Scrophularia_1,
+		838	Scrophularia_2,
+		839	Lindernia,
+		840	Proboscidea,
+		841	Chilopsis,
+		842	Pinguicula,
+		843	Utricularia,
+		844	Verbena,
+		845	Phyla,
+		846	Aloysia,
+		847	Mimulus_Mimulus,
+		848	Mimulus_Diplacus,
+		849	Mimulus_Erythranthe,
+		850	Mimulus_Mimetanthe,
+		851	Kopsiopsis,
+		852	Orobanche_Myzorrhiza,
+		853	Orobanche_Gymnocaulis,
+		854	Pedicularis,
+		855	Cordylanthus,
+		856	Orthocarpus,
+		857	Chloropyron,
+		858	Dicranostegia,
+		859	Castilleja_2,
+		860	Castilleja_1,
+		861	Castilleja_3,
+		862	Castilleja_4,
+		863	Triphysaria_2,
+		864	Triphysaria_1,
+		865	Justicia,
+		866	Carlowrightia,
+		867	Scutellaria,
+		868	Stachys,
+		869	Teucrium,
+		870	Trichostema,
+		871	Condea,
+		872	Salvia,
+		873	Lepechinia,
+		874	Prunella,
+		875	Lycopus,
+		876	Agastache,
+		877	Mentha,
+		878	Poliomintha,
+		879	Monarda,
+		880	Pycnanthemum,
+		881	Hedeoma,
+		882	Clinopodium,
+		883	Pogogyne,
+		884	Monardella,
+		885	Acanthomintha,
+		886	Viburnum,
+		887	Sambucus,
+		888	Symphoricarpos,
+		889	Lonicera,
+		890	Linnaea,
+		891	Plectritis,
+		892	Valeriana,
+		893	Aralia,
+		894	Hydrocotyle,
+		895	Bowlesia,
+		896	Eryngium,
+		897	Sanicula_2,
+		898	Sanicula_3,
+		899	Sanicula_1,
+		900	Cicuta,
+		901	Perideridia,
+		902	Sium,
+		903	Berula,
+		904	Oxypolis,
+		905	Oenanthe,
+		906	Lilaeopsis,
+		907	Ligusticum,
+		908	Osmorhiza,
+		909	Daucus,
+		910	Yabea,
+		911	Heracleum,
+		912	Conioselinum,
+		913	Apiastrum,
+		914	Glehnia,
+		915	Angelica__,
+		916	Tauschia,
+		917	Spermolepis,
+		918	Lomatium__,
+		919	Nemacladus,
+		920	Campanula__,
+		921	Campanula_Scabrella,
+		922	Campanula_Rotundifolia,
+		923	Porterella,
+		924	Downingia,
+		925	Lobelia,
+		926	Howellia,
+		927	Legenere,
+		928	Menyanthes,
+		929	Hecastocleis,
+		930	Adenocaulon,
+		931	Acourtia,
+		932	Trixis,
+		933	Cirsium,
+		934	Saussurea,
+		935	Crepis,
+		936	Lactuca,
+		937	Taraxacum,
+		938	Hieracium,
+		939	Phalacroseris,
+		940	Chaetadelpha,
+		941	Glyptopleura,
+		942	Pleiacanthus,
+		943	Prenanthella,
+		944	Stephanomeria,
+		945	Rafinesquia,
+		946	Munzothamnus,
+		947	Malacothrix_1,
+		948	Malacothrix_2,
+		949	Agoseris,
+		950	Nothocalais,
+		951	Microseris__,
+		952	Blennosperma,
+		953	Crocidium,
+		954	Tetradymia__Lepidospartum,
+		955	Cacaliopsis,
+		956	Luina,
+		957	Petasites,
+		958	Packera,
+		959	Senecio,
+		960	Gnaphalium,
+		961	Anaphalis,
+		962	Pseudognaphalium,
+		963	Antennaria,
+		964	Gamochaeta,
+		965	Logfia,
+		966	Stylocline,
+		967	Psilocarphus,
+		968	Micropus,
+		969	Ancistrocarphus,
+		970	Hesperevax,
+		971	Artemisia_Abrotanum,
+		972	Artemisia_Tridentatae,
+		973	Artemisia_Artemisia,
+		974	Artemisia_Dracunculus,
+		975	Baccharis,
+		976	Laennecia,
+		977	Eucephalus,
+		978	Pentachaeta__Rigiopappus__Tracyina,
+		979	Ericameria,
+		980	Cuniculotinus,
+		981	Chrysothamnus__,
+		982	Sericocarpus,
+		983	Ionactis,
+		984	Townsendia,
+		985	Monoptilon,
+		986	Chaetopappa,
+		987	Gutierrezia,
+		988	Euthamia,
+		989	Erigeron,
+		990	Heterotheca,
+		991	Chloracantha,
+		992	Symphyotrichum__Almutaster,
+		993	Oreostemma,
+		994	Eurybia,
+		995	Xylorhiza,
+		996	Leucosyris,
+		997	Dieteria,
+		998	Machaeranthera,
+		999	Isocoma,
+		1000	Grindelia,
+		1001	Hazardia,
+		1002	Xanthisma,
+		1003	Pyrrocoma,
+		1004	Benitoa,
+		1005	Corethrogyne,
+		1006	Lessingia,
+		1007	Pluchea,
+		1008	Trichoptilium,
+		1009	Psathyrotes,
+		1010	Helenium,
+		1011	Hymenoxys,
+		1012	Baileya_1,
+		1013	Baileya_2,
+		1014	Tetraneuris,
+		1015	Psilostrophe,
+		1016	Leptosyne,
+		1017	Bidens,
+		1018	Adenophyllum,
+		1019	Thymophylla,
+		1020	Nicolletia,
+		1021	Pectis,
+		1022	Porophyllum,
+		1023	Eclipta,
+		1024	Verbesina,
+		1025	Wyethia__Balsamorhiza,
+		1026	Rudbeckia,
+		1027	Sanvitalia,
+		1028	Bahiopsis,
+		1029	Heliomeris,
+		1030	Helianthus,
+		1031	Viguiera,
+		1032	Encelia_2,
+		1033	Encelia_1,
+		1034	Helianthella,
+		1035	Enceliopsis,
+		1036	Geraea,
+		1037	Iva,
+		1038	Xanthium,
+		1039	Dicoria,
+		1040	Ambrosia,
+		1041	Euphrosyne,
+		1042	Jaumea,
+		1043	Chaenactis,
+		1044	Orochaenactis,
+		1045	Dimeresia,
+		1046	Peucephyllum,
+		1047	Hymenopappus,
+		1048	Bahia,
+		1049	Palafoxia,
+		1050	Amauriopsis__Hymenothrix,
+		1051	Bebbia,
+		1052	Pericome,
+		1053	Perityle,
+		1054	Trichocoronis,
+		1055	Ageratina,
+		1056	Malperia,
+		1057	Brickellia,
+		1058	Pleurocoronis,
+		1059	Venegasia,
+		1060	Eriophyllum__,
+		1061	Eatonella,
+		1062	Hulsea,
+		1063	Monolopia,
+		1064	Constancea,
+		1065	Amblyopappus,
+		1066	Lasthenia_2,
+		1067	Lasthenia_1,
+		1068	Arnica,
+		1069	Blepharipappus,
+		1070	Raillardella,
+		1071	Achyrachaena,
+		1072	Layia,
+		1073	Lagophylla,
+		1074	Holozonia,
+		1075	Madia_lineage,
+		1076	Centromadia,
+		1077	Deinandra,
+		1078	Blepharizonia__Hemizonia,
+		1079	Calycadenia__Osmadenia,
+		1080	Holocarpha,
+		1081	Achillea,
+		1082	Tanacetum,
+		1083	Matricaria
+	;
+	TREE * UNTITLED = [&R] ((((((((53:0.003580880734,(55:0.002731787001,54:0.002731787001):0.000849093733):0.0004935407055,52:0.00407442144):7.786038167e-05,(((57:0.001146369091,58:0.001146369091):0.00160234754,(((60:0.001348018223,61:0.001348018223):0.0002363052146,59:0.001584323438):0.0007918737866,((64:0.001112668149,63:0.001112668149):0.0009698139582,62:0.002082482121):0.0002937151033):0.0003725193912):0.0009691122005,56:0.003717828816):0.0004344530049):0.001283117085,(((((((49:0.0002616870242,(51:0.0001987387785,50:0.0001987387785):6.294824577e-05):0.0003098587222,(48:0.0003324544302,47:0.0003324544302):0.0002390913163):0.0006411282152,46:0.001212673962):0.001088313105,45:0.002300987066):0.0007182243282,44:0.003019211395):0.0004879494601,(43:0.003337600367,42:0.003337600367):0.0001695605022):0.001024255931,(40:0.004154608154,41:0.004154608154):0.0003768086455):0.0009039820924):0.0001727026714,((38:0.002443801808,39:0.002443801808):0.0009513629614,37:0.00339516477):0.002212936808):0.0002212382888,((((((((((((((((((((604:0.0002058547877,605:0.0002058547877):0.0001198672481,603:0.0003257220357):4.986300777e-05,602:0.000375585029):0.0003776029142,601:0.0007531879432):4.712410505e-05,600:0.0008003120628):0.0001541660431,599:0.0009544781058):0.0005615225033,598:0.001516000609):9.068395004e-05,(597:0.001333105362,596:0.001333105362):0.0002735791973):0.0002959803911,(((((615:0.0005833541313,(616:0.0004409320461,617:0.0004409320461):0.0001424220851):0.0001678000341,((621:0.0003444712044,620:0.0003444712044):0.0002676748308,(618:0.0006121460351,619:0.0006121460351):0):0.0001390081447):0.0001833426067,(613:0.0005869379995,614:0.0005869379995):0.0003475587726):0.0003195734016,(((608:0.0009369981126,609:0.0009369981126):5.663323973e-05,((612:0.0002125344824,611:0.0002125344824):0.0004790039986,610:0.000691538481):0.0003020928568):0.000128124116,607:0.001121755454):0.0001323147199):0.0004128719435,606:0.001666942117):0.0002357228331):0.000299683621,(((((((627:9.5725891e-05,626:9.5725891e-05):4.527681523e-05,625:0.0001410027062):0.0001441601585,624:0.0002851628647):0.0003015087917,623:0.0005866716564):0.000463950411,(((((634:0.0001349623742,633:0.0001349623742):0.0001033076486,((636:4.386221138e-05,637:4.386221138e-05):5.914263544e-05,635:0.0001030048468):0.0001352651905):0.0002157572033,632:0.0004540272261):0.0004301709204,(629:0.0004922284967,(630:0.0004325377033,631:0.0004325377033):5.969080785e-05):0.0003919696498):0.0001304740629,628:0.001014672209):3.5949858e-05):0.0002882994025,622:0.001338921484):0.0005760940289,((((((643:0.0005334591931,644:0.0005334591931):0.0001457574187,((646:0.0003719954713,647:0.0003719954713):8.718966112e-05,645:0.000459185147):0.0002200314648):0.0001413400945,642:0.0008205566917):0.0001476771325,(((((653:0.0005245840801,((655:0.0004176748709,656:0.0004176748709):5.406491792e-05,654:0.0004717397888):5.284427674e-05):7.43267603e-05,652:0.0005989108404):0.000266501911,651:0.0008654127514):6.448453348e-05,650:0.0009298972849):1.809656931e-05,(649:0.0008427116731,648:0.0008427116731):0.0001052821956):2.023997005e-05):7.78711219e-05,641:0.001046104946):0.0001748619212,((639:0.0005014375582,640:0.0005014375582):1.330920074e-05,638:0.0005147467589):0.0007062201084):0.0006940486314):0.0002873330724):0.0004930430702,595:0.002695391656):0.0008017631398,((((((587:0.000476350263,586:0.000476350263):0.0006873266289,585:0.001163676892):0.0005028534392,((584:0.0002805527389,583:0.0002805527389):0.000611006802,582:0.0008915595408):0.0007749707902):0.0006003351104,(((590:0.001337031655,((592:0.0005071740869,(593:0.0003725746308,594:0.0003725746308):0.0001345994707):0.0005526682611,591:0.001059842348):0.0002771893065):3.841886175e-05,589:0.001375450516):0.0001122761,588:0.001487726616):0.0007791388251):5.976456708e-05,(580:0.001744680321,581:0.001744680321):0.0005819496871):0.000369331576,(578:0.001630803071,579:0.001630803071):0.001065158513):0.0008011932112):0.0002114494729,((((((((((((((((((((((885:0.0001190442855,884:0.0001190442855):0.0001461293789,883:0.0002651736644):0.0001696260466,882:0.0004347996965):5.554878171e-05,(((881:0.0002055299684,880:0.0002055299684):9.287333056e-05,879:0.000298403299):3.644241346e-05,878:0.0003348457124):0.0001555027803):6.548247462e-05,877:0.0005558309673):0.0002392864691,(((876:0.0005722207551,875:0.0005722207551):0.0001190323842,874:0.0006912531393):2.449124171e-05,(873:0.0002522925052,872:0.0002522925052):0.0004634518904):7.937304088e-05):8.929921563e-05,871:0.0008844166375):0.0001709783136,(867:0.0005372840923,(868:0.0003221165855,(869:0.0001994139613,870:0.0001994139613):0.0001227026241):0.0002151675068):0.0005181108589):0.0001088050187,(866:0.0008733588058,865:0.0008733588058):0.000290841164):0.0001062697158,(((((((((860:0.0002472899402,861:0.0002472899402):0.0001142276281,859:0.0003615175683):0.0001071814013,(862:0.0002329132046,(864:7.73944881e-05,863:7.73944881e-05):0.0001555187165):0.0002357857505):3.605755054e-06,(857:0.0003878993945,858:0.0003878993945):8.440533015e-05):0.0001197195845,856:0.0005920243092):0.0005191293516,855:0.001111153661):4.484957195e-05,854:0.001156003233):4.675195622e-05,(851:0.001188448047,(853:0.001100141359,852:0.001100141359):8.830668814e-05):1.43071564e-05):3.746465074e-05,((848:0.0004402988808,847:0.0004402988808):0.0002519969603,(849:0.0004930740282,850:0.0004930740282):0.0001992218129):0.0005479239986):3.024986051e-05):6.783581775e-05,((((846:0.0001578802164,845:0.0001578802164):0.0002850938805,844:0.0004429740969):0.0002622689123,(842:0.0003142363512,843:0.0003142363512):0.000391006658):0.0003061547231,(841:0.0009685410672,840:0.0009685410672):4.2856665e-05):0.0003269077712):0.0002373612256,839:0.001575666729):0.0003084592272,(835:0.001090377753,(836:0.0004791536506,(837:0.0002010162724,838:0.0002010162724):0.0002781373782):0.0006112241029):0.0007937482028):0.0001097575751,((((((831:0.0002625901031,830:0.0002625901031):6.463955557e-05,829:0.0003272296586):0.0001083551774,((833:0.00016204426,834:0.00016204426):3.666030942e-05,832:0.0001987045839):0.0002368802521):0.000372439957,828:0.0008080247931):0.0004432303529,((824:0.0007826771345,825:0.0007826771345):0.0004091529952,(826:0.0008669859622,827:0.0008669859622):0.0003248441674):5.942501629e-05):0.0001451317715,(((819:0.0003791506533,818:0.0003791506533):0.0005518540359,((821:0.0002907425571,(823:0.0001446017704,822:0.0001446017704):0.0001461407867):0.0001670239657,820:0.0004577665228):0.0004732381664):8.240928821e-05,817:0.001013413992):0.0003829729255):0.0005974966139):9.344100955e-05,(815:0.001284932271,816:0.001284932271):0.0008023922558):0.0002910712371,((812:0.001080224539,(814:0.0006713987289,813:0.0006713987289):0.0004088258247):0.0009889248547,811:0.002069149394):0.0003092463842):0.0001262618044,(((((799:0.0006654766409,798:0.0006654766409):0.0001846958171,797:0.000850172458):9.02586371e-05,796:0.0009404310951):3.218263671e-05,(795:0.0008211329629,794:0.0008211329629):0.0001514807689):0.0008708770154,(((((((807:0.0001352954228,806:0.0001352954228):0.0001200603109,805:0.0002553557482):1.053531972e-05,((809:0.0001364700697,810:0.0001364700697):2.144775199e-05,808:0.0001579178217):0.0001079732317):8.306516767e-05,804:0.0003489562356):0.0002181519834,803:0.000567108219):0.0005061145201,(802:0.0006875659327,801:0.0006875659327):0.0003856568064):0.0002018489302,800:0.001275071655):0.0005684190925):0.0006611668205):0.0002030914146,((((738:0.0009392830085,((740:0.0007684979319,((742:0.0006639444897,741:0.0006639444897):0,743:0.0006639444897):0.0001045534422):0.0001626960901,739:0.000931194022):8.088986556e-06):0.0005647812765,((744:0.0007341576274,(746:0.0003014256275,745:0.0003014256275):0.0004327319998):0.0003853889974,(((((752:8.74246979e-05,751:8.74246979e-05):8.417434272e-05,750:0.0001715990261):0.0001053045033,749:0.0002769035294):0.0001691948411,748:0.0004460983705):0.0001523609595,747:0.00059845933):0.0005210872948):0.0003845176748):0.0002558677232,(735:0.001390800404,(737:0.0007907380803,736:0.0007907380803):0.0006000623232):0.0003691316046):0.0002964383456,(((((((((762:0.0004641049832,761:0.0004641049832):0.0001500684438,(763:0.0004662992258,((766:0.0001793925984,765:0.0001793925984):9.208684124e-05,764:0.0002714794396):0.0001948197862):0.0001478742011):3.591107708e-05,(759:0.000554609136,760:0.000554609136):9.547538249e-05):0.0001660297691,758:0.0008161142876):6.413775481e-05,757:0.0008802520279):0.0001072256395,756:0.0009874776819):0.0006849008618,(755:0.001151533049,754:0.001151533049):0.00052084548):0.0001204033885,753:0.001792781932):0.0002188046698,((((773:0.000755673783,((775:0.0004879437562,776:0.0004879437562):0.0002268720017,774:0.0007148157579):4.085802509e-05):0.0003419734923,(((777:0.0003438759201,778:0.0003438759201):0.0002770723977,(779:0.0004524370486,(780:0.0001839928258,(782:0.0001540893521,781:0.0001540893521):2.990347371e-05):0.0002684442228):0.0001685112547):0.0002708406284,((((((790:0.0001354090805,((793:7.796736303e-05,792:7.796736303e-05):1.236478656e-05,791:9.033214959e-05):4.507693092e-05):8.216352571e-05,(788:9.103278968e-05,789:9.103278968e-05):0.0001265398166):6.089783507e-05,787:0.0002784704413):0.0002437046642,(786:0.0001598416864,785:0.0001598416864):0.0003623334191):0.0001199888013,784:0.0006421639213):0.0001993995346,783:0.0008415634559):5.022549039e-05):0.000205858329):0.0003843733639,(772:0.001018623393,771:0.001018623393):0.0004633972313):0.0003185389292,(767:0.001165732571,(768:0.0008760963733,(770:0.0004088777551,769:0.0004088777551):0.0004672186182):0.0002896362123):0.0006348269828):0.0002110270482):4.47837663e-05):0.0006513786286):0.0002052960782,734:0.002913045061):0.0001169567775,(((((((((((((1081:0.0001441220307,(1083:0.0001441220307,1082:0.0001441220307):0):0.0001387559671,(971:0.0002582718066,((973:6.526867156e-05,974:6.526867156e-05):0.0001245502333,972:0.0001898189048):6.845290178e-05):2.460619115e-05):6.803962079e-05,((975:9.861174613e-05,976:9.861174613e-05):0.0001836320703,((((((((((((((1004:8.640047223e-06,(1005:2.919904553e-06,1006:2.919904553e-06):5.72014267e-06):4.385190657e-06,(1001:1.20568759e-05,(1003:1.205169447e-05,1002:1.205169447e-05):5.181433263e-09):9.683619812e-07):5.076062939e-06,(1000:1.253320491e-05,999:1.253320491e-05):5.568095906e-06):1.121584365e-05,(((997:4.449878747e-06,998:4.449878747e-06):7.948347653e-06,996:1.239821189e-05):1.3643991e-05,995:2.604220288e-05):3.274941585e-06):2.342820609e-06,994:3.165996508e-05):1.619241436e-05,993:4.785236492e-05):1.198841422e-08,992:4.786436785e-05):1.047597271e-05,991:5.834032605e-05):1.607329945e-05,(989:7.18823865e-05,990:7.18823865e-05):2.531253516e-06):1.675575372e-05,(988:4.289640383e-05,987:4.289640383e-05):4.827297539e-05):1.984039011e-05,(((986:4.689850225e-05,985:4.689850225e-05):6.770580296e-06,984:5.366908254e-05):4.856957979e-05,983:0.0001022386623):8.771092492e-06):4.97905693e-05,((981:6.780557095e-05,982:6.780557095e-05):1.670200905e-05,980:8.450758e-05):7.629275863e-05):1.412920247e-06,(979:8.292145184e-05,978:8.292145184e-05):7.929182155e-05):4.98783779e-05,977:0.0002120916513):7.015217967e-05):6.86738021e-05):0.0001119633853,(((961:0.0002878182839,962:0.0002878182839):5.133717633e-05,((((((969:6.087818336e-05,970:6.087818336e-05):4.270370386e-05,968:0.0001035818872):2.873039432e-05,967:0.0001323122815):9.625608079e-06,(965:9.235975909e-05,966:9.235975909e-05):4.957813053e-05):1.382702476e-05,964:0.0001557649144):0.0001196268992,963:0.0002753918136):6.376364662e-05):0.0001025070374,960:0.0004416625121):2.121849171e-05):5.875224274e-05,(((((((((((((1071:2.943892992e-05,(1073:2.661532455e-05,1072:2.661532455e-05):2.823605366e-06):7.347040146e-07,1070:3.017364845e-05):2.509741134e-05,((((1078:1.313143549e-05,(1079:5.184553734e-06,1080:5.184553734e-06):7.946881757e-06):6.932365833e-06,1077:2.006380132e-05):1.10767287e-05,1076:3.114053002e-05):1.364359912e-05,(1074:4.47840856e-05,1075:4.47840856e-05):2.902763733e-11):1.048694516e-05):3.472304845e-05,1069:8.999410824e-05):1.181700602e-06,1068:9.117580885e-05):5.010795748e-05,((((1065:2.532417525e-05,(1067:1.681016602e-05,1066:1.681016602e-05):8.514009222e-06):3.248018451e-05,1064:5.780435976e-05):1.896101235e-05,1063:7.676537211e-05):5.695924912e-05,((1061:6.386072955e-05,1062:6.386072955e-05):4.210277372e-05,1060:0.0001059635033):2.776110346e-05):7.559159605e-06):8.915060864e-05,1059:0.000230434375):4.719893829e-06,((((1055:2.891080109e-05,1054:2.891080109e-05):5.028366177e-05,((1057:2.981437338e-05,1058:2.981437338e-05):2.312794421e-05,1056:5.294231759e-05):2.625214527e-05):2.155875367e-05,(1052:9.496159331e-05,1053:9.496159331e-05):5.791623227e-06):8.232722708e-05,1051:0.0001830804436):5.207382519e-05):5.305093901e-05,((((((1050:4.101367128e-05,1049:4.101367128e-05):1.012951335e-05,1048:5.114319914e-05):2.044920126e-05,1047:7.159240041e-05):3.30637271e-05,1046:0.0001046561275):2.435767103e-06,(1043:5.140928098e-05,(1045:4.172702546e-05,1044:4.172702546e-05):9.682255513e-06):5.568261363e-05):6.44215435e-05,1042:0.0001715134381):0.0001166917697):2.01790991e-05,(((1018:0.0002220658232,1019:0.0002220658232):1.560191965e-05,(1020:9.957203843e-05,(1021:7.961071918e-05,1022:7.961071918e-05):1.996131925e-05):0.0001380957045):1.650080398e-05,((((((((((1040:1.441242513e-05,1041:1.441242513e-05):1.143916778e-05,1039:2.58515929e-05):4.894538609e-06,1038:3.074613151e-05):3.267305865e-05,1037:6.341920467e-05):3.398161002e-05,((1033:4.203467488e-05,1032:4.203467488e-05):1.502030739e-05,((1035:3.519891302e-05,1036:3.519891302e-05):1.73765678e-05,1034:5.257548082e-05):4.479486937e-06):4.034583243e-05):3.047132687e-06,(1028:7.410498915e-05,((1030:4.796844645e-05,1031:4.796844645e-05):1.816826758e-05,1029:6.613671402e-05):7.968275126e-06):2.634295823e-05):3.250172302e-05,1027:0.0001329496704):1.504988656e-05,(1026:4.481507261e-05,1025:4.481507261e-05):0.0001031844844):4.787252462e-05,1024:0.0001958720816):2.151550249e-05,1023:0.0002173875841):3.67809628e-05):5.421576004e-05):2.744222035e-05,(1017:0.0001277452763,1016:0.0001277452763):0.000208081251):5.230246138e-05,(((((1012:0.0001370944687,1013:0.0001370944687):5.234646728e-05,(1015:0.0001545781194,1014:0.0001545781194):3.486281652e-05):3.882410208e-05,1011:0.000228265038):1.348338108e-05,1010:0.0002417484191):6.479234254e-05,(1009:0.0001918523053,1008:0.0001918523053):0.0001146884563):8.158821246e-05):0.0001176758792,1007:0.0005058048678):1.582837876e-05):0.0001100397383,((952:0.0001684010513,953:0.0001684010513):0.0004010692626,(((955:0.0001268657534,956:0.0001268657534):0.0001526581299,954:0.0002795238833):8.330968197e-05,((958:0.0001855499263,959:0.0001855499263):0.000119566812,957:0.0003051167383):5.77168124e-05):0.0002066367487):6.220265639e-05):0.0002237373362,(((((((((949:4.517861474e-05,(951:3.739314116e-05,950:3.739314116e-05):7.78547358e-06):3.761540578e-05,(947:2.637141983e-05,948:2.637141983e-05):5.642258617e-05):8.228098605e-05,(((946:3.508177199e-05,945:3.508177199e-05):4.551862997e-05,944:8.060040196e-05):6.136674752e-06,(942:4.820930327e-05,943:4.820930327e-05):3.852775893e-05):7.833791534e-05):7.085911874e-05,941:0.0002359341108):4.825830192e-06,940:0.000240759941):3.671560707e-05,939:0.0002774755481):1.369700998e-05,938:0.000291172558):0.0001967101385,937:0.000487882711):0.0002628453286,(935:0.000651674188,936:0.000651674188):9.905385156e-05):0.0001046822814):0.0001263143299,(933:0.0003762956836,934:0.0003762956836):0.0006054289528):0.0001884399759,((931:0.0006164526915,932:0.0006164526915):0.0001608464635,930:0.0007772991551):0.0003928654718):0.0002096284821,929:0.001379793109):0.0004409743975,928:0.001820767506):0.0002568997428,(((920:0.0008525431887,(922:0.0006380505309,921:0.0006380505309):0.0002144926578):0.0003173866045,919:0.001169929793):0.000436615201,((924:0.0009828078027,923:0.0009828078027):3.337343748e-05,((926:0.000511905287,927:0.000511905287):0.0001484952184,925:0.0006604005054):0.0003557807202):0.0005903637541):0.0004711222548):0.0004353783334,((((((((((915:0.0001227996055,914:0.0001227996055):5.596355762e-05,913:0.0001787631631):0.000263223341,((918:0.000407209261,917:0.000407209261):7.359580085e-06,916:0.0004145688411):2.741766296e-05):0.0003195555496,912:0.0007615420392):0.0001529385659,911:0.0009144806051):6.132639911e-06,(((909:0.0001941545743,910:0.0001941545743):0.0003684675539,908:0.0005626221427):0.0001322247052,907:0.0006948468334):0.0002257663971):0.0002824267196,((((903:0.0002834046897,902:0.0002834046897):0.000319503416,((906:0.0003533467964,905:0.0003533467964):0.0001351503136,904:0.0004884971245):0.0001144109811):0.0002641605998,901:0.0008670687055):0.0003012035951,900:0.001168272286):3.476766393e-05):0.0004632373616,(895:0.001175267105,(896:0.0005474369003,((899:0.0001322743279,898:0.0001322743279):9.548535348e-05,897:0.0002277596814):0.0003196772189):0.0006278302046):0.0004910102067):0.0002721949128,(893:0.0006804655694,894:0.0006804655694):0.00125800667):0.0005542650134,(((890:0.0007051036765,(891:0.0002232710943,892:0.0002232710943):0.0004818325822):0.0004715480613,(889:0.0007888281489,888:0.0007888281489):0.0003878235889):0.0009817738092,(887:0.001333043823,886:0.001333043823):0.0008253817237):0.000334311691):2.030834465e-05):0.0005169562701):0.0001376295351,(((((709:0.001153919556,((713:0.0004076720196,(714:0.0003777367752,(715:0.0003028126116,716:0.0003028126116):7.492414908e-05):2.993525898e-05):0.0004393053083,(710:0.0007104988983,(712:0.0004462993143,711:0.0004462993143):0.000264199584):0.0001364784442):0.0003069422284):0.0005580476919,((((728:0.0004283833405,(729:0.0002759872721,((730:0.0001616111096,731:0.0001616111096):5.387805251e-06,(732:6.46969287e-05,733:6.46969287e-05):0.0001023019861):0.0001089883572):0.0001523960684):0.000351756227,((725:0.0006511581057,(727:0.0002603199386,726:0.0002603199386):0.0003908381671):1.6086478e-05,724:0.0006672445837):0.0001128949838):0.0004977678262,723:0.001277907394):6.99529775e-06,(((720:0.0005134379608,(722:0.000288270549,721:0.000288270549):0.0002251674118):0.0005546993104,(719:0.0003883245623,718:0.0003883245623):0.0006798127234):9.183164477e-05,717:0.00115996893):0.0001249337609):0.0004270645714):0.0001054131973,708:0.001817380446):0.0006550591589,(((700:0.001302855951,((702:0.0009702969781,703:0.0009702969781):7.214634932e-05,701:0.001042443327):0.0002604126239):0.0002062234532,((704:0.001143814804,705:0.001143814804):3.012457723e-05,(707:0.0004456429704,706:0.0004456429704):0.0007282964104):0.0003351400236):0.0002031770171,699:0.001712256422):0.0007601831829):0.0002593839425,(((((((((697:0.0001612821248,698:0.0001612821248):3.510599556e-05,(695:8.351904381e-05,696:8.351904381e-05):0.0001128690766):3.537345621e-05,694:0.0002317615766):8.171002694e-05,693:0.0003134716035):5.049492492e-05,(692:0.0002437270009,691:0.0002437270009):0.0001202395275):0.0002641161876,(((690:0.0001683842733,689:0.0001683842733):0.0001036821342,(688:0.0002412733093,687:0.0002412733093):3.079309823e-05):0.0001217663232,686:0.0003938327307):0.0002342499853):0.0003694578753,((677:0.0006869057427,((681:0.0005022404771,((683:0.0004131468788,682:0.0004131468788):6.260085752e-05,(685:0.0003079613597,684:0.0003079613597):0.0001677863766):2.649274084e-05):0.0001068332148,((679:0.0002664664828,680:0.0002664664828):3.689743619e-05,678:0.0003033639045):0.000305709773):7.783206521e-05):0.0002800509526,(((675:0.0003592825563,676:0.0003592825563):1.023517395e-05,674:0.0003695177448):0.0002729063947,673:0.0006424241395):0.0003245325702):3.058389605e-05):0.0006057868055,672:0.001603327411):0.0009872673186,671:0.002590594715):0.0001412288315):0.0004358078263):0.0001155967892,(((((664:0.0007477441146,663:0.0007477441146):0.0001099281996,(662:0.0006534267897,661:0.0006534267897):0.0002042455245):0.000689333382,660:0.001547005696):0.0009304148912,(665:0.001443708933,((((669:0.0002029346073,670:0.0002029346073):0.0001535217021,668:0.0003564563094):0.0005168977068,667:0.0008733540163):0.0004705620795,666:0.001343916096):9.979283715e-05):0.001033711669):0.0003094824224,((658:0.001224307469,659:0.001224307469):0.0009146460626,657:0.002138953532):0.0006479494777):0.0004963251671):0.0004253760917):0.0001046722814,((575:0.001732836305,(577:0.001164759042,576:0.001164759042):0.0005680772631):0.0009672770443,574:0.00270011335):0.001113163201):0.000209359541,((((((((((((((((368:0.0001173487522,367:0.0001173487522):6.636762888e-06,366:0.0001239855151):0.0001104227579,365:0.0002344082875):0.0001124738363,((((371:7.368879089e-05,372:7.368879089e-05):3.181368093e-05,((374:7.923415815e-05,375:7.923415815e-05):1.391280143e-05,373:9.314695959e-05):1.235551223e-05):0.0001164313047,370:0.0002219337765):6.965093042e-05,369:0.0002915847069):5.529741689e-05):0.0001802734856,364:0.0005271556094):0.0003805112948,363:0.0009076669042):0.0002478189399,362:0.001155485859):0.0004181021142,361:0.001573587973):0.000499749064,((((((((((((((420:0.0001382977368,((422:3.647987363e-05,423:3.647987363e-05):2.154852143e-05,421:5.802840958e-05):8.026934176e-05):6.302273069e-05,(418:0.0001367893447,419:0.0001367893447):6.453113735e-05):0.000106887453,417:0.0003082079205):8.509933741e-05,(416:0.0001250140369,415:0.0001250140369):0.000268293221):1.692526061e-05,414:0.0004102325185):7.517174031e-05,((412:0.0003092931622,413:0.0003092931622):8.470353106e-05,411:0.0003939967078):9.140755099e-05):0.0003084956134,((408:0.0006828044858,(410:0.0004181538704,409:0.0004181538704):0.0002646506154):7.523060836e-05,(406:0.0002769283771,407:0.0002769283771):0.0004811067171):3.586476348e-05):2.6284424e-05,((404:0.0003108532236,405:0.0003108532236):1.203436497e-05,(402:0.0001148480793,403:0.0001148480793):0.0002080395092):0.0004972966786):0.000104420873,(((((390:0.0002975599735,(391:0.0002596053508,392:0.0002596053508):3.795462275e-05):0.0001753798614,((((((399:6.12794469e-05,398:6.12794469e-05):0,(401:6.008234714e-05,400:6.008234714e-05):1.197099763e-06):2.558825418e-05,397:8.686768656e-05):8.532617388e-05,396:0.000172193875):5.989941497e-05,(395:7.017392137e-05,394:7.017392137e-05):0.0001619193686):0.0001877503373,393:0.0004198436127):5.309620761e-05):0.0001344068578,389:0.0006073466927):9.497702149e-05,(387:0.0002479575614,388:0.0002479575614):0.0004543661383):9.793492322e-05,386:0.0008002586374):0.0001243465173):9.943317021e-05,((383:0.0004055982997,(384:0.0002853218781,385:0.0002853218781):0.0001202764217):0.0003574314929,382:0.0007630297927):0.0002610085322):2.055590686e-05,381:0.001044594217):0.0002987605131,(379:0.0007860569964,380:0.0007860569964):0.0005572977339):8.775160715e-05,(378:0.0008172726355,377:0.0008172726355):0.000613833702):0.000430164215,376:0.001861270538):0.0002120664843):1.811667095e-05,(((354:0.001405649361,355:0.001405649361):0.0003379914375,(356:0.001357133351,(357:0.001320494421,((360:0.0003958219511,359:0.0003958219511):0.0003170464151,358:0.0007128683663):0.0006076260546):3.663893057e-05):0.0003865074468):4.8729972e-05,(350:0.001390261433,((352:0.001235415417,353:0.001235415417):5.310458208e-05,351:0.001288519999):0.0001017414189):0.0004021093374):0.000299082923):0.0002166564069,(((327:0.001384273031,326:0.001384273031):0.0004809907081,325:0.001865263754):0.0003037820331,((((332:0.0007443338607,(((((337:0.0001227839886,338:0.0001227839886):7.742569281e-05,336:0.0002002096814):0.0001376759213,((335:0.0001762023885,334:0.0001762023885):7.226111009e-05,333:0.0002484634986):8.942211865e-05):0,339:0.0003378856172):0.0001325965347,((340:0.0002543305356,(342:0.0001669970571,341:0.0001669970571):8.733349306e-05):7.886183516e-05,((343:8.39681449e-05,344:8.39681449e-05):0.0001034911904,(345:0.0001149240011,(((349:4.654388612e-05,348:4.654388612e-05):4.207846307e-06,347:5.075173242e-05):4.57005752e-05,346:9.645230762e-05):1.847170799e-05):7.253531966e-05):0.00014573305):0.0001372897811):0.0002738517088):3.48153128e-06,(331:0.0003368669503,330:0.0003368669503):0.0004109484561):0.0004437521246,329:0.001191567517):0.0004567906136,328:0.00164835813):0.0005206876568):0.0001390643277):0.0001865130488,((323:0.001538062339,324:0.001538062339):0.0002040948855,322:0.001742157225):0.0007524659388):0.0002382600663,((321:0.001208498336,320:0.001208498336):0.0002260851496,319:0.001434583486):0.001298299744):4.80591433e-05,((((((((((((562:8.644590048e-05,561:8.644590048e-05):0.0001371132641,560:0.0002235591646):0.0001440119433,559:0.0003675711079):0.0002307209068,((((569:7.276145947e-05,568:7.276145947e-05):2.536957447e-05,567:9.813101943e-05):0.0001382150951,((571:6.20045718e-05,570:6.20045718e-05):4.129210437e-05,(572:3.223223043e-05,573:3.223223043e-05):7.106444574e-05):0.0001330494384):0.0001012568751,(((565:0.0001712514201,566:0.0001712514201):8.047636686e-06,564:0.0001792990568):0.0001069943037,563:0.000286293346):5.130964361e-05):0.000260689025):4.969302192e-05,558:0.0006479850511):0.0002663341313,((557:0.0007291864993,556:0.0007291864993):9.625985438e-05,555:0.0008254463537):8.887281415e-05):0.0005249154886,(552:0.000627211437,(553:0.0003978863822,554:0.0003978863822):0.0002293250548):0.000812023234):7.668513972e-05,(((((((546:0.0002111257857,545:0.0002111257857):0.0001553447103,(((550:3.386291602e-05,551:3.386291602e-05):5.266700496e-05,549:8.652990646e-05):0.0001140941445,(548:6.762663008e-05,547:6.762663008e-05):0.0001329974354):0.0001658464451):6.376821847e-05,(((541:0.000239928691,540:0.000239928691):8.220554322e-06,((543:0.0001382274319,544:0.0001382274319):4.380653638e-05,542:0.0001820339683):6.61152626e-05):9.610297452e-05,539:0.0003442522199):8.598649458e-05):2.468347724e-05,538:0.0004549221917):0.0003114919622,537:0.0007664141539):9.129411098e-05,((535:0.0002354507281,536:0.0002354507281):0.0004790546663,534:0.0007145053944):0.0001432028705):0.0005021913479,533:0.001359899613):0.0001560201979):0.0004048288496,(((((529:0.000591815673,((531:0.0002448442021,532:0.0002448442021):6.899463006e-06,530:0.0002517436796):0.0003400719934):0.0001239262842,528:0.0007157419572):0.0005714218855,((526:0.0005081057144,527:0.0005081057144):0.0003492635802,525:0.0008573692947):0.0004297945336):7.919700278e-05,524:0.001366360846):3.66401207e-05,(521:0.001103696141,(522:0.0007090652958,523:0.0007090652958):0.0003946308456):0.0002993048248):0.0005177476796):0.0001505109265,(((((((520:0.0005082698657,519:0.0005082698657):0.0003753238818,518:0.0008835937331):0.0005387952711,517:0.001422389004):0.0002762641812,516:0.0016986532):3.530930513e-05,(515:0.0007056728504,514:0.0007056728504):0.00102828964):3.541354337e-05,(509:0.001155777224,(510:0.001031742013,(511:0.000904942167,(513:0.0008239048991,512:0.0008239048991):8.10372679e-05):0.0001267998461):0.0001240352104):0.0006135988103):0.0001122504396,(((505:0.0003564995606,506:0.0003564995606):0.0004486304803,(508:0.0006543021907,507:0.0006543021907):0.0001508278503):0.0006440362765,(504:0.0007077273685,503:0.0007077273685):0.0007414389489):0.000432460156):0.0001896331134):5.803729203e-05,(((((((((479:0.0002463782547,478:0.0002463782547):5.540375964e-05,(((482:0.0001273210809,483:0.0001273210809):6.282036452e-05,481:0.0001901414309):4.168059576e-05,480:0.0002318220267):6.995998768e-05):0.000131225153,(((((487:5.128054341e-05,488:5.128054341e-05):3.627326942e-05,486:8.755381283e-05):0.0001306047598,485:0.0002181585581):0.0001256673329,((490:0.0002109094427,489:0.0002109094427):9.543200068e-05,(((((((((501:3.08754061e-05,502:3.08754061e-05):8.249944805e-06,500:3.91253509e-05):6.516646525e-06,499:4.564199742e-05):2.840628624e-05,(497:6.571700342e-05,498:6.571700342e-05):8.331280245e-06):2.329425805e-05,496:9.734254172e-05):1.961748689e-05,495:0.0001169600286):3.528802787e-06,494:0.0001204888169):8.039111269e-05,(493:0.0001621417493,492:0.0001621417493):3.873819479e-05):2.41309797e-05,491:0.0002250109238):8.133051961e-05):3.748444759e-05):5.382294354e-05,484:0.0003976488345):3.535833281e-05):0.0001725936,((474:0.0002097274373,((476:0.0001625213002,477:0.0001625213002):5.879867245e-06,475:0.0001684011819):4.132625539e-05):0.000213976619,473:0.0004237040418):0.0001818967256):0.0001052403813,((468:0.000556447108,(((472:0.0001574231472,471:0.0001574231472):0.0003479301231,470:0.0005053532558):4.905662e-05,469:0.0005544098758):2.037217643e-06):0.0001508260506,((466:0.0005810627912,467:0.0005810627912):3.514390565e-05,465:0.0006162066968):9.106644722e-05):3.568004611e-06):0.0001475771178,464:0.0008584182664):0.0003378424096,((((463:0.0002705027322,462:0.0002705027322):2.572948815e-05,461:0.0002962322204):0.0002264510139,460:0.0005226832488):0.0006233492953,(458:0.0007498837563,459:0.0007498837563):0.0003961487878):5.02281319e-05):0.0002598635951,457:0.001456124271):0.0006206036582,((455:0.001162180517,456:0.001162180517):0.0002800206913,454:0.001442201208):0.0006345267209):5.25689496e-05):0.0003731130209,((((((((444:0.0005341344195,((447:0.0001643140761,446:0.0001643140761):0.0001236542227,445:0.0002879682987):0.0002461661207):3.87301251e-05,(((451:0.0001687626341,(452:0.0001256206274,453:0.0001256206274):4.314199216e-05):9.405453769e-05,(450:0.0002477769804,449:0.0002477769804):1.504017681e-05):3.865215687e-05,448:0.0003014693141):0.0002713952305):0.0002644350562,443:0.0008372996007):0.0003447866477,(441:0.000559877391,442:0.000559877391):0.000622208843):0.0002467133497,((435:0.001048958595,((437:0.0008629022236,(438:0.0005764534346,(439:0.0004991601659,440:0.0004991601659):7.729328324e-05):0.000286448789):0.0001764430131,436:0.001039345237):9.613358416e-06):0.0003160465001,434:0.001365005095):6.3794503e-05):0.0003024625238,433:0.001731262122):0.0004480279392,((((432:0.0003511283302,431:0.0003511283302):0.000253854163,430:0.0006049824787):0.0008522309094,429:0.001457213388):6.931776572e-05,428:0.001526531168):0.0006527588928):7.725347183e-05,(((427:0.0006979667384,426:0.0006979667384):0.000300955104,425:0.0009989218569):0.0005115386244,424:0.001510460481):0.0007460830371):0.0002458663813):0.0002785324879):0.0005872750539,318:0.003368217427):0.0005107949654,(((((((((((311:8.845931546e-05,312:8.845931546e-05):1.22467747e-05,310:0.0001007060902):0.000144325108,((313:4.461842488e-05,314:4.461842488e-05):0.000103837911,((317:7.145556412e-05,316:7.145556412e-05):6.133531059e-05,315:0.0001327908747):1.566544663e-05):9.657487682e-05):2.671828558e-05,(308:0.0001667851553,309:0.0001667851553):0.0001049643284):5.140084845e-05,((306:0.0001108761696,307:0.0001108761696):3.847797653e-05,305:0.0001493541462):0.000173796186):0.0002340519007,(304:0.0005572022329,303:0.0005572022329):0):0.0003688330119,((299:0.0003310262559,((302:0.0001876630948,301:0.0001876630948):0.0001273970753,300:0.00031506017):1.596610039e-05):0.0001869039059,298:0.0005179301618):0.0004081050829):2.154930518e-05,(297:0.0008212572447,296:0.0008212572447):0.0001263273052):0.0003804339652,(((((295:0.0002607880093,294:0.0002607880093):5.448104362e-05,293:0.0003152690529):0.0003733832537,(292:0.0006732921871,291:0.0006732921871):1.536011943e-05):9.986077634e-05,290:0.0007885130829):0.0005006980356,289:0.001289211133):3.880739667e-05):0.0004922338233,((284:0.001265853406,(((287:0.0004212056766,288:0.0004212056766):0.0003824842307,286:0.0008036899218):0.0001101753989,285:0.0009138653062):0.0003519880997):0.0002906451404,283:0.001556498546):0.000263753792):0.000866002593,282:0.002686254917):0.001192757461):0.0001436236987):0.000210472272,(((((262:0.002086051824,261:0.002086051824):0.0005709433214,((265:0.001540227424,264:0.001540227424):0.0009097533818,263:0.002449980805):0.0002070143402):0.0004202216106,(((267:0.0007185160705,268:0.0007185160705):0.0009808852006,(((275:0.0007962713576,274:0.0007962713576):0.0001402836917,((277:0.0005508993604,276:0.0005508993604):4.990660728e-05,(278:0.0005663144002,((281:0.0004874843212,280:0.0004874843212):5.871119766e-05,279:0.0005461955044):2.011889578e-05):3.449156756e-05):0.000335749096):8.518675414e-05,(((273:0.0002682928582,272:0.0002682928582):0.0002399037273,(271:0.0004205598987,270:0.0004205598987):8.763668673e-05):0.0001203542883,269:0.0006285508883):0.0003931909296):0.0006776594677):0.001260377966,266:0.002959779252):0.0001174375042):0.0002857387004,(((((254:0.001165008273,255:0.001165008273):0.0002993027203,((257:0.0007282279777,((260:0.0004218411496,259:0.0004218411496):0.0002527414611,258:0.0006745826107):5.364536696e-05):0.0001243287959,256:0.0008525567591):0.0006117542201):0.0003107969245,253:0.001775107918):0.0009983619573,(251:0.002410908749,252:0.002410908749):0.0003625611264):6.943075579e-05,((250:0.002425398069,249:0.002425398069):0.0002764339639,248:0.002701832032):0.0001410685845):0.0005200548252):0.0001317326141,247:0.003494688071):0.0007384202924):0.0001883584954,((244:0.002005387706,(245:0.001135389271,246:0.001135389271):0.0008699984359):0.001478644725,(242:0.002677288018,243:0.002677288018):0.000806744413):0.000937434427):0.0001228527406,(((((((((((((144:0.0002344038318,(145:0.0001651199704,146:0.0001651199704):6.928386144e-05):0.0001360913751,(((((150:2.396097934e-05,151:2.396097934e-05):4.975376225e-05,(153:3.026595634e-05,152:3.026595634e-05):4.344878526e-05):2.252788489e-05,149:9.624262648e-05):2.565147637e-05,148:0.0001218941029):0.0001157926822,147:0.000237686785):0.0001328084219):0.0002531459613,143:0.0006236411537):0.0001685245204,(((141:0.0001704322457,142:0.0001704322457):0.0001683075533,140:0.000338739799):4.177142324e-05,(138:0.0002475836419,139:0.0002475836419):0.0001329275659):0.0004116544663):0.0005089398817,(136:0.0008809728857,137:0.0008809728857):0.00042013267):0.0002798811554,(((134:0.0005601538066,135:0.0005601538066):0.0001496130582,(133:0.000472339224,132:0.000472339224):0.0002374276263):8.7001533e-05,131:0.0007967683833):0.0007842183424):0.0003865147327,(128:0.00117190749,(130:0.0007452879846,129:0.0007452879846):0.0004266195051):0.0007955939686):0.0002700070272,127:0.002237508471):0.0008359135165,(((((124:0.0004265656443,(126:0.0002930227651,125:0.0002930227651):0.0001335428792):2.823879677e-05,123:0.0004548044411):0.0003715889248,((121:0.0004749820598,122:0.0004749820598):4.704872027e-05,120:0.0005220307655):0.0003043626003):0.0003385243994,((118:0.0004170385996,119:0.0004170385996):0.0001289866577,(116:0.0002254458884,117:0.0002254458884):0.0003205793689):0.000618892508):0.0007260380747,((114:0.0007484342902,115:0.0007484342902):0.0008866785001,113:0.00163511279):0.0002558430642):0.001182466148):0.0005573527412,(((((((((((((((198:0.0001139868438,199:0.0001139868438):1.384844716e-05,197:0.0001278353055):7.571281547e-05,(196:0.0001861054572,195:0.0001861054572):1.744266373e-05):0.0002218547488,((194:0.000133119424,193:0.000133119424):6.948265721e-05,192:0.0002026020812):0.000222800774):4.531909399e-05,191:0.0004707219492):2.607520731e-05,((((((209:6.573559562e-05,210:6.573559562e-05):4.446348986e-05,(207:7.263325891e-05,208:7.263325891e-05):3.756582657e-05):2.306875685e-05,206:0.0001332678423):7.848224075e-05,205:0.0002117500831):5.880415867e-05,204:0.0002705542418):0.000123380971,(((203:0.0002418305093,202:0.0002418305093):3.126595844e-05,201:0.0002730964677):9.27598325e-05,200:0.0003658563002):2.807891254e-05):0.0001028619583):0.0002895247316,(189:0.0002740637847,190:0.0002740637847):0.000512258118):0.000138954908,((187:0.0003377091582,188:0.0003377091582):0.0002166359569,186:0.0005543451152):0.0003709316955):0.0002852728794,((((185:0.0004863626062,184:0.0004863626062):0.0004192098378,183:0.0009055724441):2.976222523e-05,182:0.0009353346693):8.584393985e-05,181:0.001021178595):0.0001893710955):0.0007236991438,(((((((220:0.0003376886792,(221:0.0001186717593,222:0.0001186717593):0.0002190169199):0.0003169240056,219:0.0006546126703):0.0001530942411,218:0.0008077069114):1.852809417e-05,(214:0.0005512257182,((217:0.0003566082401,216:0.0003566082401):2.702568826e-05,215:0.0003836339284):0.0001675917898):0.0002750092874):0.0003604371161,(((((((((237:7.265637942e-05,238:7.265637942e-05):2.829043694e-05,((241:4.538693158e-05,240:4.538693158e-05):9.168001891e-06,239:5.455493347e-05):4.639188289e-05):4.332443086e-05,236:0.0001442712617):7.558487616e-05,235:0.0002198561379):0.0001346270615,(233:0.0002238124452,234:0.0002238124452):0.0001306707541):0.0001632899085,232:0.0005177731078):0.0002670981967,(((230:0.000316658664,231:0.000316658664):0.0002305097017,(228:0.0003196621391,229:0.0003196621391):0.0002275062411):6.325797066e-05,(227:0.0002608073707,226:0.0002608073707):0.0003496189801):0.0001744449682):9.887974379e-05,225:0.0008837510629):0.0001069234037,(223:0.0003388297847,224:0.0003388297847):0.0006518446819):0.0001959976696):9.211897484e-05,213:0.001278791097):0.0001154168613,(212:0.001194605477,211:0.001194605477):0.0001996024813):0.0005400408905):0.000748112664,180:0.002682361512):0.0002319296031,(((((((((169:0.0003566852504,(170:0.0002064406379,171:0.0002064406379):0.0001502446125):0.0004621776206,(167:0.0004833250237,168:0.0004833250237):0.0003355378329):4.825528304e-05,166:0.0008671181541):0.0004947674135,165:0.001361885568):0.0006986164204,((176:0.001219751988,((178:0.0007482113435,179:0.0007482113435):0.0001738576521,177:0.00092206901):0.0002976829926):0.0002232432278,((173:0.0003312991157,172:0.0003312991157):0.0002393710992,(174:0.0005285590376,175:0.0005285590376):4.211117722e-05):0.0008723250011):0.0006175067721):0.0001170631928,164:0.002177565181):6.124647151e-05,163:0.002238811652):0.0001039754584,162:0.002342787111):0.0002634603807,(160:0.002327112027,161:0.002327112027):0.0002791354645):0.000308043624):0.0003449665465,((159:0.0007558195453,158:0.0007558195453):0.0009506056013,(156:0.0007403127056,157:0.0007403127056):0.0009661124409):0.001552832515):7.332353613e-05,155:0.003332581184):0.0001836245957,154:0.003516205779):0.0001145689495):7.645434098e-05,(((((((111:0.0003831901393,112:0.0003831901393):0.0007408399201,110:0.001124030059):0.0004210165615,109:0.001545046621):0.0001805136748,(105:0.001139248422,(106:0.0009844489672,(107:0.0007874771446,108:0.0007874771446):0.0001969718226):0.0001547994552):0.0005863118733):0.0008787948115,((104:0.0006479628014,103:0.0006479628014):0.0003946745902,102:0.001042637392):0.00156171773):3.751450571e-05,101:0.002641869627):0.0009537254047,(((98:0.001283761194,(100:0.0003880673194,99:0.0003880673194):0.0008956938747):0.0006344440357,97:0.00191820523):0.0004242769312,((95:0.001276557986,96:0.001276557986):0.0007532168112,(93:0.001398856516,94:0.001398856516):0.0006309182808):0.0003127073639):0.001253112857):0.0001116340522):0.0001335688734,92:0.003840797958):0.0003396382624,(((((78:0.0009087366017,79:0.0009087366017):0.001683516143,(81:0.002006045908,80:0.002006045908):0.0005862068368):0.000409740413,(77:0.001155218558,76:0.001155218558):0.0018467746):0.0004664192696,(((((86:0.0003407161892,85:0.0003407161892):0.0002000762123,((87:0.0001304331194,88:0.0001304331194):0.0001750651147,((90:0.000144158591,91:0.000144158591):0.0001025169648,89:0.0002466755413):5.882269282e-05):0.0002352941675):0.000500415466,84:0.001041207868):0.0006013366945,83:0.001642544562):0.0007167508273,82:0.002359295404):0.001109117024):0.0004919902669,((((71:0.001974981837,((72:0.001317898407,73:0.001317898407):0.0003738627757,(74:0.0009966108941,75:0.0009966108941):0.0006951503028):0.00028322064):0.0005492102132,70:0.00252419205):7.951024001e-05,69:0.00260370229):0.0001015852212,68:0.002705287511):0.001255115183):0.0002200335258):0.0003638833788):0.0001200568566,67:0.004664376441):0.0002104833315,(66:0.003112233593,65:0.003112233593):0.001762626179):0.0009544800797):0.0002599938422,(((((((15:0.001836308512,16:0.001836308512):9.166711612e-05,(((((23:0.0007547888754,24:0.0007547888754):0.0001350902555,22:0.0008898791454):0.0006560437038,21:0.001545922849):0.0002241451164,20:0.001770067966):7.330204116e-05,((19:0.0008169621704,18:0.0008169621704):0.0001426768317,17:0.0009596390166):0.0008837309902):8.460562084e-05):0.0009091656737,14:0.002837141301):0.001704434504,((((31:0.001223782737,30:0.001223782737):0.0002384377445,(((34:0.0003651858634,(35:0.000343970347,36:0.000343970347):2.121551638e-05):0.0004793185711,33:0.0008445044345):0.0001307869808,32:0.0009752914153):0.0004869290661):0.0012545236,(((28:0.001772827014,29:0.001772827014):8.334840484e-05,27:0.001856175418):0.000462523064,26:0.002318698482):0.0003980455988):0.0005486836083,25:0.00326542769):0.001276148101):4.725975119e-05,(11:0.003825047199,(13:0.002515232641,12:0.002515232641):0.001309814558):0.0007637883429):0.000531287084,(((10:0.001072922289,9:0.001072922289):0.0003469322691,8:0.001419854558):0.001958901034,7:0.003378755591):0.001741367034):0.0008186472538,(5:0.005543146971,6:0.005543146971):0.0003956229086):0.0001505638294):5.459338057e-05,((1:0.002545758046,2:0.002545758046):0.003354475453,(4:0.004210142088,3:0.004210142088):0.001690091426):0.0002436935756);
+END;
