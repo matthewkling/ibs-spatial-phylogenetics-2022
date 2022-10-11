@@ -60,15 +60,6 @@ plot_edge_connect(tree, community, show.tip.label = F, type = "fan")
 
 ```{r phylo_ex}
 marsupials <- c("Lestoros_inca", "Lagostrophus_fasciatus")
-
-tree <- read.tree("../../data/upham_2019/upham_2019_tree0000.tre")
-mrca <- getMRCA(tree, marsupials)
-plot(extract.clade(tree, mrca), show.tip.label = F, type = "fan")
-
-descendents <- phytools::getDescendants(tree, mrca)
-clr <- rep("black", nrow(tree$edge))
-clr[which.edge(tree, descendents)] <- "red"
-plot(tree, edge.color = clr, show.tip.label = F, type = "fan")
 ```
 
 ------------------------
@@ -107,10 +98,7 @@ plot(sum(r, na.rm = T))
 -   Plot a map of overall mammal species richness.
 
 ```{r spatial_ex}
-r <- rast("../../data/upham_2019/iucn_mammals.tif")
-r %>% subset("Canis lupus") %>% plot()
-r %>% subset(grep("Canis ", names(r))) %>% sum() %>% plot()
-r %>% sum() %>% plot()
+
 ```
 
 ------------------------------------------------------------------------
@@ -695,4 +683,4 @@ plot(soln + protected,
 
 ----------------------------
 
-And that's all for today!
+And that is all!
