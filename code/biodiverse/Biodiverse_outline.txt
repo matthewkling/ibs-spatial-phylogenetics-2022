@@ -355,6 +355,11 @@ Let's look at options for exporting our results files using the Export button on
 
 
 
+Lastly, let's try loading in the Thornhill data set and letting you try do repeat these analyses on your
+own. Depending on the time remaining, we may want to pare this down.
+
+
+
 Additional topics we may explore if there's extra time:
 -Community phylogenetics metrics (e.g. mean nearest taxon distance, mean pairwise distance)
 -Phylogenetic beta diversity
