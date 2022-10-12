@@ -1,24 +1,25 @@
 
+# a set of functions to construct a community matrix
+# with a row for every branch of a phylogeny
 parentProb <- function(x) 1 - prod(1 - x)
-
-build_clade_range <- function(e, phylo, sxt){
+build_clade_range <- function(e, phylo, comm){
       node <- phylo$edge[e,2]
       if(node <= length(phylo$tip.label)){
             otu <- phylo$tip.label[node]
-            prob <- sxt[,otu]
+            prob <- comm[,otu]
       } else{
             clade <- extract.clade(phylo, node)
             otu <- clade$tip.label
-            prob <- apply(sxt[,otu], 1, parentProb)
+            prob <- apply(comm[,otu], 1, parentProb)
       }
       return(prob)
 }
-
-build_clade_ranges <- function(tree, tip_occs){
-      sapply(1:nrow(tree$edge), build_clade_range, phylo=tree, sxt=tip_occs)
+build_clade_ranges <- function(tree, comm){
+      sapply(1:nrow(tree$edge),
+             build_clade_range, phylo=tree, comm=comm)
 }
 
-
+# helpher function to plot a phylogeny
 phyplot <- function(tree,
                    connect = NULL, hl = "orange", bg = "black",
                    value = NULL, col = c("black", "blue", "red", "orange"),
@@ -38,21 +39,6 @@ phyplot <- function(tree,
 
       plot(tree, edge.color = clr, ...)
 }
-
-# plot_edge_connect <- function(tree, tips, hl = "orange", bg = "black", ...){
-#       clr <- rep(bg, length(tree$edge.length))
-#       clr[which.edge(tree, tips)] <- "orange"
-#       plot(tree, edge.color = clr, ...)
-# }
-#
-# plot_edge_numeric <- function(tree, var, ...){
-#       pal <- colorRampPalette(c("black", "blue", "red", "orange"))(20)
-#       clr <- pal[cut(branch_length, 20)]
-#       if(sd(var[is.finite(var)]) == 0) clr <- "black"
-#       plot(tree, edge.color = clr, ...)
-# }
-
-
 
 # helper function to plot a map
 carto <- function(d, v){

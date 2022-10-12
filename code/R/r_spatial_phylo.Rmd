@@ -10,12 +10,12 @@ editor_options:
 # SETUP
 
 ```{r setup, include=TRUE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 
 # install.packages(
 #       "ape", "phyloregion", "canaper",            # phylo libraries
 #       "terra", "geosphere", "prioritizr", "gdm",  # spatial libraries
-#       "pals", "vegan", "tidyverse")               # other utilities
+#       "pals", "vegan", "tidyverse", "rSymphony")  # other utilities
 
 # install.packages("canaper", repos = "https://ropensci.r-universe.dev")
 
