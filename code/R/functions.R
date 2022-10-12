@@ -1,4 +1,47 @@
 
+# function to clean a spatial phylogenetic dataset
+clean_dataset <- function(x){
+
+      # remove spaces from taxon names
+      x$tree$tip.label <- str_replace(x$tree$tip.label, " ", "_")
+      colnames(x$comm) <- str_replace(colnames(x$comm), " ", "_")
+
+      # convert non-finite values to formal absences
+      x$comm[!is.finite(x$comm)] <- 0
+
+      # remove taxa with no occurrences
+      ghost <- colSums(x$comm, na.rm = T) == 0
+      if(any(ghost)){
+            message("removing ", sum(ghost), " taxa with no occurrences")
+            x$comm <- x$comm[, !ghost]
+      }
+
+      # remove non-overlapping taxa
+      taxa <- intersect(x$tree$tip.label, colnames(x$comm)[colSums(x$comm, na.rm = T) > 0])
+      if(length(taxa) == 0) stop("no overlapping taxon names")
+      prune <- setdiff(x$tree$tip.label, taxa)
+      if(length(prune > 0)){
+            message("removing ", length(prune), " tips from tree")
+            x$tree <- drop.tip(x$tree, prune)
+      }
+      drop <- setdiff(colnames(x$comm), taxa)
+      if(length(drop > 0)){
+            message("removing ", length(drop), " taxa from community matrix")
+            x$comm <- x$comm[, taxa]
+      }
+
+      # remove sites with no taxa
+      occupied <- rowSums(x$comm) > 0
+      if(sum(occupied > 0)) message("removing ", sum(occupied), " sites with no occurrences")
+      x$comm <- x$comm[occupied,]
+      x$xy <- x$xy[occupied,]
+
+      # name rows
+      rownames(x$comm) <- paste0("cell_", 1:nrow(x$comm))
+
+      return(x)
+}
+
 # a set of functions to construct a community matrix
 # with a row for every branch of a phylogeny
 parentProb <- function(x) 1 - prod(1 - x)

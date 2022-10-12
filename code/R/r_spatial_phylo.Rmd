@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 # install.packages(
 #       "ape", "phyloregion", "canaper",            # phylo libraries
 #       "terra", "geosphere", "prioritizr", "gdm",  # spatial libraries
-#       "pals", "vegan", "tidyverse", "rSymphony")  # other utilities
+#       "pals", "vegan", "tidyverse", "Rsymphony")  # other utilities
 
 # install.packages("canaper", repos = "https://ropensci.r-universe.dev")
 
@@ -134,52 +134,7 @@ To keep things tidy, let's start by loading the data for each one, and getting t
 -   comm: a community matrix, with a row for each site and a column for each terminal taxon
 -   xy: a data frame storing the spatial coordinates of each row of the community matrix
 
-To avoid issues with some of the algorithms used later on, we need to do a few things to clean up the data, including removing taxa that aren't present in both the spatial and phylogenetic datasets, and removing unoccupied sites from the community matrix. Let's define a function called `clean_dataset()` that we can use on each of our four datasest:
-
-```{r clean}
-
-clean_dataset <- function(x){
-      
-      # remove spaces from taxon names
-      x$tree$tip.label <- str_replace(x$tree$tip.label, " ", "_")
-      colnames(x$comm) <- str_replace(colnames(x$comm), " ", "_")
-      
-      # convert non-finite values to formal absences
-      x$comm[!is.finite(x$comm)] <- 0
-      
-      # remove taxa with no occurrences
-      ghost <- colSums(x$comm, na.rm = T) == 0
-      if(any(ghost)){
-            message("removing ", sum(ghost), " taxa with no occurrences")
-            x$comm <- x$comm[, !ghost]
-      }
-      
-      # remove non-overlapping taxa
-      taxa <- intersect(x$tree$tip.label, colnames(x$comm)[colSums(x$comm, na.rm = T) > 0])
-      if(length(taxa) == 0) stop("no overlapping taxon names")
-      prune <- setdiff(x$tree$tip.label, taxa)
-      if(length(prune > 0)){
-            message("removing ", length(prune), " tips from tree")
-            x$tree <- drop.tip(x$tree, prune)
-      }
-      drop <- setdiff(colnames(x$comm), taxa)
-      if(length(drop > 0)){
-            message("removing ", length(drop), " taxa from community matrix")
-            x$comm <- x$comm[, taxa]
-      }
-      
-      # remove sites with no taxa
-      occupied <- rowSums(x$comm) > 0
-      if(sum(occupied > 0)) message("removing ", sum(occupied), " sites with no occurrences")
-      x$comm <- x$comm[occupied,]
-      x$xy <- x$xy[occupied,]
-      
-      # name rows
-      rownames(x$comm) <- paste0("cell_", 1:nrow(x$comm))
-      
-      return(x)      
-}
-```
+To avoid issues with some of the algorithms used later on, we need to do a few things to clean up the datasets, including removing taxa that aren't present in both the spatial and phylogenetic datasets, and removing unoccupied sites from the community matrix. To do this we'll use a function called `clean_dataset()` defined in `functions.R`.
 
 
 #### Calfiornia vascular plants (from [Thornhill et al. 2017](https://doi.org/10.1186/s12915-017-0435-x)):
@@ -322,11 +277,6 @@ cpr <- cpr_rand_test(ds$comm, ds$tree,
       bind_cols(ds$xy)
 cpr %>% carto("pd_obs")
 cpr %>% carto("pe_obs")
-cpr %>%
-      cpr_classify_endem() %>% # CANAPE
-      carto("endem_type") +
-      scale_fill_manual(values = c("mediumpurple1", "red", "gray80", "blue", "darkorchid4"),
-                        breaks = c("mixed", "neo", "not significant", "paleo", "super"))
 
 # plot a local community on the phylogeny
 par(mfrow = c(1, 2))
@@ -373,7 +323,6 @@ ds$xy %>% mutate(pe = pe) %>% carto("pe")
 Exercises:
 
 -   Compute these metrics with one of the other datasets.
--   Explore the other outputs of the canaper function.
 -   Manual calculations make it clear that these diversity metrics are simply weighted summaries of the `pcomm` matrix, which invites any number of additional weighting schemes. Make a version weighted by: taxon endangerment; site endangerment; or taxon-site habitat importance (using fake simulated data for these variables).
 -   Species richness can be considered PD on a star phylogeny. Prove it.
 
@@ -383,7 +332,9 @@ Exercises:
 
 #### Significance testing
 
-To get a sense for how noteworthy an observed high or low diversity metric is, it can be helpful to compare the observed value to a null distribution. Let's demonstrate this using the acacia dataset. 
+To get a sense for how noteworthy an observed high or low diversity metric is, it can be helpful to compare the observed value to a null distribution. Let's demonstrate this using the acacia dataset. The `cpr_rand_test()` function randomly permutes the community matrix many times, calculating the diversity of each location each time to derive a distribution of null diversity values for each location.
+
+CANAPE (Mishler et al. 2014) is a special application of this randomization approach, used to identify areas of neo-endemism and paleo-endemism.
 
 ```{r sig}
 ds <- acacia
@@ -394,10 +345,9 @@ cpr <- cpr_rand_test(ds$comm, ds$tree,
       bind_cols(ds$xy)
 # glimpse(cpr)
 
-cpr %>% carto("pd_obs_p_upper")
-
-# raw PD is very different from null quantile
-cpr %>%
+# raw PD patterns here are very different from randomized quantiles
+cpr %>% carto("pd_obs")
+cpr %>% carto("pd_obs_p_upper")cpr %>%
       ggplot(aes(pd_obs, pd_obs_p_upper)) +
       geom_point()
 
@@ -405,8 +355,9 @@ cpr %>%
 cpr %>%
       cpr_classify_endem() %>%
       carto("endem_type") +
-      scale_fill_manual(values = c("mediumpurple1", "red", "gray80", "blue", "darkorchid4"),
-                        breaks = c("mixed", "neo", "not significant", "paleo", "super"))
+      scale_fill_manual(
+            values = c("mediumpurple1", "red", "gray80", "blue", "darkorchid4"),
+            breaks = c("mixed", "neo", "not significant", "paleo", "super"))
 
 ```
 
@@ -438,7 +389,7 @@ bind_rows(curveball, r0, c0) %>%
 
 #### Spatial scale
 
-Before moving on from randomizations, it's important to note that the size of the geographic region in an analysis can strongly influence the results, because it alters the species pool to which a site is compared during randomization. Let's look at three different extents
+Before moving on from randomizations, it's important to note that the size of the geographic region in an analysis can strongly influence the results, because it alters the species pool to which a site is compared during randomization. Let's look at three different extents:
 
 ```{r scale}
 
@@ -564,9 +515,11 @@ div %>%
 
 # BETA DIVERSITY
 
-Analyses of beta diversity focus on compositional differences among local communities.
+Analyses of beta diversity focus on compositional differences among local communities. Phylogenetic versions of these analyses represent differences between communities as the difference in the portion of the phylogenetic tree that's found in each site.
 
 #### Turnover
+
+We'll begin by creating a pairwise turnover matrix with a row and column for each site. We can compare this to species-based turnover and geographic distance. Further exploration of these turnover patterns could use a modeling approach like GDM (Ferrier 2007) to understand how factors like environmental differences explain phylogenetic turnover, but we will not cover that here.
 
 ```{r beta}
 
@@ -591,15 +544,12 @@ tibble(distance = geo_dist[ss],
       pivot_longer(-distance, "stat", "value") %>%
       ggplot(aes(distance, value, color = stat)) +
       geom_point(size = .5) +
-      geom_smooth(fill = "black") 
-
-
-# GDM?
-# library(gdm)
-# ?gdm
+      geom_smooth(aes(group = stat), color = "black")
 ```
 
 #### Regionalization
+
+We can also use turnover data to make maps of phylogenetic similarity. Let's look at two approaches: a discrete classification of phylogenetic regions using a cluster analysis from the `phyloregions` package, and a continuous ordination map that plots similar sites in similar colors:
 
 ```{r regions}
 
