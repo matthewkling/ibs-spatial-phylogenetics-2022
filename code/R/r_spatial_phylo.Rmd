@@ -249,11 +249,23 @@ mammals <- list(tree = tree,
       clean_dataset()
 ```
 
+
+#### Exercises:
+
+-   Plot the phylogeny for each of the datasets.
+-   Plot the spatial coordinates for each of the datasets.
+-   Identify the number of taxa and number of sites in each dataset.
+
+```{r data_ex}
+
+```
+
+
 ------------------------------------------------------------------------
 
 # ALPHA DIVERSITY
 
-Alpha phylogenetic diversity (and related metrics like phylogenetic endemism) represent the amount of evloutionary history present in a single community. We'll look at functions from some existing packages that can calculate phylodiversity metrics, and reproduce these with some of our own calculations. We'll also cover methods for significance testing, and explore the sensitivity of these tests to spatial scale. And we'll take a look at how alternative evolutionary branch lengths influence results.
+Alpha phylogenetic diversity (and related metrics like phylogenetic endemism) represent the amount of evolutionary history present in a single community. We'll look at functions from some existing packages that can calculate phylodiversity metrics, and reproduce these with some of our own calculations. We'll also cover methods for significance testing, and explore the sensitivity of these tests to spatial scale. And we'll take a look at how alternative evolutionary branch lengths influence results.
 
 
 #### Pre-packaged functions
@@ -320,11 +332,11 @@ ds$xy %>% mutate(pe = pe) %>% carto("pe")
 
 ```
 
-Exercises:
+#### Exercises:
 
 -   Compute these metrics with one of the other datasets.
--   Manual calculations make it clear that these diversity metrics are simply weighted summaries of the `pcomm` matrix, which invites any number of additional weighting schemes. Make a version weighted by: taxon endangerment; site endangerment; or taxon-site habitat importance (using fake simulated data for these variables).
 -   Species richness can be considered PD on a star phylogeny. Prove it.
+-   Manual calculations make it clear that these diversity metrics are simply weighted summaries of the `pcomm` matrix, which invites any number of additional weighting schemes. Make a version weighted by: taxon endangerment; site endangerment; or taxon-site habitat importance (using fake simulated data for these variables).
 
 ```{r alpha_ex}
 
@@ -386,8 +398,6 @@ bind_rows(curveball, r0, c0) %>%
       scale_fill_manual(values = c("red", "blue", "gray"))
 
 ```
-
-#### Spatial scale
 
 Before moving on from randomizations, it's important to note that the size of the geographic region in an analysis can strongly influence the results, because it alters the species pool to which a site is compared during randomization. Let's look at three different extents:
 
@@ -511,6 +521,17 @@ div %>%
 
 ```
 
+
+#### Exercises:
+
+-   Verify that `rpd` as returned by the `cpr_rand_test()` function using a chronogram is identical to the ratio of chronogram PD to cladogram PD calculated immediately above.
+-   Make a map of the ratio of phylogram PD to cladogram PD, which measures the relative contribution of anagenesis versus cladogenesis to a community's history. Where is this highest and lowest?
+
+```{r alpha_ex2}
+
+```
+
+
 ------------------------------------------------------------------------
 
 # BETA DIVERSITY
@@ -573,6 +594,15 @@ ord %>%
       mutate(color = rgb(MDS1, MDS2, MDS3)) %>%
       carto("color") +
       scale_fill_identity()
+```
+
+#### Exercises:
+
+- The above demonstration used Sorensen's distance as a measure of phylogenetic community difference. Try things with Jaccard's distance. How do the results differ?
+- Experiment with different numbers of clusters and different cluster methods in the `phyloregion()` function, to explore how robust regional boundaries are to these parameter choices.
+
+```{r beta_ex}
+
 ```
 
 ------------------------------------------------------------------------
@@ -662,6 +692,15 @@ prob <- problem(units, pfeatures) %>%
 soln <- solve(prob)
 plot(soln + protected, 
      col = c("gray", "orange", "darkgreen"))
+```
+
+#### Exercises:
+
+- These exercises were based on the chronogram, which we packaged up with the California flora dataset. Replicate them with the phylogram and cladogram. Do the conservation priorities change?
+- `prioritizr` has functionality to consider many additional factors, such as land cost, reserve shape, and reserve connectivity. A simple example is `add_neighbor_constraints(k = 2)`, which would force proposed reserves to have at least two neighbors. Like other constraints this will likely add a lot of computational time, so try it when you have a few minutes to wait.
+
+```{r prioritize_ex}
+
 ```
 
 ------------------------------------------------------------------------
