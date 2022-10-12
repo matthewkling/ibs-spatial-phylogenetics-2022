@@ -18,18 +18,41 @@ build_clade_ranges <- function(tree, tip_occs){
       sapply(1:nrow(tree$edge), build_clade_range, phylo=tree, sxt=tip_occs)
 }
 
-plot_edge_connect <- function(tree, tips, hl = "orange", bg = "black", ...){
+
+phyplot <- function(tree,
+                   connect = NULL, hl = "orange", bg = "black",
+                   value = NULL, col = c("black", "blue", "red", "orange"),
+                   ...){
+
       clr <- rep(bg, length(tree$edge.length))
-      clr[which.edge(tree, tips)] <- "orange"
+      if(!is.null(connect)){
+            clr[which.edge(tree, connect)] <- hl
+      }
+
+      if(!is.null(value)){
+            n <- min(c(20, length(tree$edge.length)))
+            pal <- colorRampPalette(col)(n)
+            clr <- pal[cut(value, n)]
+            if(sd(value[is.finite(value)]) == 0) clr <- "black"
+      }
+
       plot(tree, edge.color = clr, ...)
 }
 
-plot_edge_numeric <- function(tree, var, ...){
-      pal <- colorRampPalette(c("black", "blue", "red", "orange"))(20)
-      clr <- pal[cut(branch_length, 20)]
-      if(sd(var[is.finite(var)]) == 0) clr <- "black"
-      plot(tree, edge.color = clr, ...)
-}
+# plot_edge_connect <- function(tree, tips, hl = "orange", bg = "black", ...){
+#       clr <- rep(bg, length(tree$edge.length))
+#       clr[which.edge(tree, tips)] <- "orange"
+#       plot(tree, edge.color = clr, ...)
+# }
+#
+# plot_edge_numeric <- function(tree, var, ...){
+#       pal <- colorRampPalette(c("black", "blue", "red", "orange"))(20)
+#       clr <- pal[cut(branch_length, 20)]
+#       if(sd(var[is.finite(var)]) == 0) clr <- "black"
+#       plot(tree, edge.color = clr, ...)
+# }
+
+
 
 # helper function to plot a map
 carto <- function(d, v){
