@@ -1,0 +1,361 @@
+IBS Spatial Phylogenetics Workshop
+Biodiverse Session
+2022_10_11
+Instructor: Kyle Rosenblad - kyle_rosenblad@berkeley.edu
+
+
+
+Cloning the workshop repository:
+Welcome! First we'll clone the Github repository for this workshop using RStudio--i.e., download it to a
+directory on your computer that will now have the same structure and contents as the repository on Github.
+To clone the repository, first open it on Github:
+https://github.com/matthewkling/ibs-spatial-phylogenetics-2022
+
+Click the green "Code" button, and then click the button with two overlapping squares to the right of
+the field showing the URL.
+
+Now open RStudio. In the File menu, click New Project, then Version Control, then Git. Paste in the
+repository URL and choose a directory to store it on your computer. We're ready to go!
+
+
+Data sets in the repository:
+The repository contains four data sets. We'll be using two of them for the Biodiverse portion of the
+workshop: one on Australian Acacia plants (Mishler et al. 2014) and one on California vascular plants
+(Thornhill et al. 2017).
+
+
+
+Ingredients for spatial phylogenetics:
+An analysis requires two ingredients: 1- data on the spatial occurrences of the organisms of interest
+and 2- a phylogeny.
+
+
+
+Types of spatial data:
+The spatial data can take various forms. Often we'll have a set of point occurrences like we might get
+from GBIF, or we might have modeled species ranges from an SDM analysis, or perhaps a raster of
+presence/absence or abundance data. Similarly, we might have presence/absence or abundance data for
+irregular polygons instead of a raster grid. The two data sets we'll use in Biodiverse contain point
+occurrences for the spatial component. I'll briefly show what this looks like in Excel now before we
+explore it in more detail using Biodiverse.
+
+
+
+Types of phylogenies:
+Phylogenetic relationships can also be represented in various ways. The branch lengths can be scaled to
+represent the expected number of changes between ancestor and descendant for the characters used to build
+the phylogeny (often DNA sequences), in which case we call the tree a phylogram. Alternatively, the branch
+lengths might be calibrated to represent the amount of time separating ancestor from descendant, in which
+case we call the tree a chronogram. Lastly, sometimes we are interested in the number of speciation events
+across different parts of the tree, in which case we make all the branch lengths equal and refer to the
+tree as a cladogram. We can do spatial phylogenetics with each of these three types of trees, and doing so
+reveals different facets of phylodiversity.
+
+The two data sets we'll use today both contain phylograms. Biodiverse has a handy function for converting
+to a cladogram, which I'll demonstrate later.
+
+
+
+Goals for Biodiverse session:
+We won’t have time today to cover all of the many things it’s possible to do in Biodiverse, so over the
+course of our session, I’ll point out several online resources that may prove useful when you’re using
+Biodiverse on your own in the future. These resources are linked here where relevant. My goal for today
+is to give you a strong foundation so you can go off on your own and change the details of what we do 
+to suit your own data and questions.
+
+
+
+Warning for Mac users:
+As of today, Biodiverse is unfortunately only maintained for Windows. If you're a Mac user, you
+might only encounter small bugs, or you may find the program unusable, depending on your particular machine
+and operating system. We will unfortunately not be able to troubleshoot Mac issues today. If you're a
+Windows user and you encounter an error, please try using the Zoom hand raise function or typing a message
+in the chat, but if none of the instructors see this promptly, please go ahead and jump in with your
+question or issue. If others are having the same problem, we'll troubleshoot as a group. If it's a unique
+issue, Israel or Matt will go to a breakout room with you.
+
+
+
+Opening Biodiverse:
+Go to the directory where you installed Biodiverse and open the BiodiverseGUI executable. If you don't
+remember specifying where to install Biodiverse, it probably wound up in your Downloads folder. Feel
+free to move the whole Biodiverse directory somewhere else if you'd like.
+
+
+
+Biodiverse's interface:
+Let’s take a moment to walk through the big picture organization of the interface. As we discussed earlier,
+spatial phylogenetics has two ingredients: a phylogeny and a set of taxon occurrences or abundances in
+space. This two-ingredient recipe is reflected in the layout of the Biodiverse interface. “Basedata”,
+which we see on a dropdown menu and a toolbar, refers to spatial occurrence data. “Trees”, which we also
+see on both a dropdown menu and a toolbar, refers to the phylogeny. There’s a third option, “Matrices”,
+which is not a necessary ingredient of a phylogenetic analysis and is less commonly used, but might be
+convenient in some scenarios. Today we'll focus on the essentials using Basedata and Trees.
+
+
+
+Loading the Mishler et al. (2014) Acacia occurrence data:
+To load the Basedata, click the blue plus sign on the Basedata toolbar. Navigate to the directory where
+you cloned the workshop repository from Github, open the "data" folder, then "mishler_2014". Biodiverse
+is automatically showing us .txt and .csv files, two formats commonly used for data in table format.
+Select "mishler_2014_acacia_points.csv" and click Next.
+
+Now we're looking at the Import options settings. Allowing labels with no groups, or empty groups, is not
+necessary but wouldn't hurt. Clicking these is helpful when you have taxa that appear only in the tree or
+only in the spatial data, but we don't need to worry about that for this data set. We'll learn more about
+what "groups" and "labels" mean soon. Our data are not in matrix form (rows for taxa and columns for sites,
+or vice versa), so we won't click that option. Biodiverse is good at guessing input separators (commas for
+a csv), so we can leave that on that default "guess". 7 decimal places will be plenty for cell sizes.
+Now click Next.
+
+Now we have to tell Biodiverse what to do with each of the columns in our csv. As we see here, the default
+is simply to ignore. We have to choose the columns that we want to inform our analyses. The two key
+options for us on the dropdown menus are "Label" and "Group". In Biodiverse parlance, taxa are represented
+by "Labels", and geography is represented by "Groups". As such, let's use the "taxa" field for our "Labels".
+(In this data set, pretty much each taxon is a species, so we could essentially equivalently use "Species"
+as our Label, but I want to emphasize that you can do spatial phylogenetics without any special regard
+for the species level of the taxonomic hierarchy.) We'll use the x and y Equal Albers variables for our
+"Groups". We could also use latitude and longitude, but many people find it helpful to use a projected
+coordinate reference system that gives us grid cells of equal size. (We would have unequally sized cells if
+we used lat/lon.) 
+
+Now we need to choose our geographic grid resolution. This question is a good one to think hard about.
+Our decision might depend on data quality, putative completeness of range sampling, computing
+requirements, or other factors. To reproduce Mishler et al.'s (2014) results, let's change the default
+100 km (i.e., 100,000 meters) to 50km. Our data are not in degrees, so we won't change those fields. Click
+OK.
+
+We don't need to reorder the columns to get the correct x-y order, but if we did, we could click the
+column names and use the up/down buttons. Click OK.
+
+We don't need to remap label names. This is something we do if we're worried there
+might be typos, formatting differences, or other mismatches between the taxon names in our tree and the
+occurrence data we just loaded.
+
+The data are loaded! Let's click "Show" on the right to see some nice visual and tabular summaries.
+
+Click the first taxon, abbreviata, in the table in the top left. "Variety" shows us how many grid cells
+are occupied by this taxon (6), and the cells are highlighted in red on the map below. "Samples" tells
+us how many point occurrences this taxon has in the data set, and the "Redundancy" value tells us that
+about 91% of them are redundant--i.e., occurring in a grid cell that is already "covered" by another
+point occurrence of the same taxon. Take a moment to scroll through, highlight a few more taxon names,
+and view a few more ranges.
+
+
+
+Loading the Mishler et al. (2014) Acacia phylogeny:
+To load the Tree, click the blue plus sign on the Tree toolbar. Our data are not in tabular format, nor
+are most phylogenies you'd build or download. (They're usually .nex, .new, .tre, or .phy, none of which
+are tabular.) Navigate to the mishler_2014 folder again, select "mishler_2014_acacia.tre", and click OK.
+
+We don't need to show details or remap node names. (Remapping is again referring to the problem of typos
+or otherwise mismatched taxon names between Tree and Basedata.)
+
+The tree is loaded! It's a phylogram, so branch lengths represent the expected amount of molecular change
+between ancestor and descendant. (The tree was built from DNA data.) We can view it in the bottom right.
+
+***Exercise: Try hovering over a few tips on the phylogeny. What do you think is happening on the map?
+
+***Exercise: Try hovering over some deeper branches on the tree. Now what's happening on the map?
+
+
+
+Saving the project:
+Now that we've done some work, let's save the project by opening the File menu and clicking "Save
+Project As". For convenience and consistency, let's put it within the same mishler_2014 directory and call
+it mishler_2014_biodiverse_analysis.
+
+
+
+Richness analysis:
+For our first spatial analysis, we'll map a familiar non-phylogenetic measure of "alpha" diversity in
+each grid cell: "taxon" richness, which in our case equates to species richness. Open the Analyses
+dropdown and click Spatial.
+
+First we have the option to name our analysis. The default seems mostly fine, but let's make it more
+informative by changing "Spatial0" to "richness". In this case, the defaults are fine for the two
+neighbor sets.
+
+For most alpha diversity measures (i.e., measures that quantify biodiversity in a single
+grid cell), there is no need to specify anything for Neighborhood 2. (The lines of code preceded by # are
+comments, which do not affect the analysis, just like in R.) The sp_self_only() value for Neighborhood 1
+simply specifies that we only want the algorithm to look at the taxa within each cell when calculating the
+values for that cell. 
+
+Now we have to actually tell Biodiverse what biodiversity metric we want to calculate (i.e., species
+richness.) There are many different metrics to choose from, and they're organized hierarchically into
+categories. Richness is under "Lists and Counts". Choose "Richness", click "Go", wait for the analysis to
+finish (this should be just a few seconds), and then click "Yes" for "display results". 
+
+We now have a new tab showing our richness results! Take a moment to look at the patterns.
+
+Across the bottom, second from the left, there's a popup menu that currently says "RICHNESS_ALL". Perhaps
+unsurprisingly, this is the official Biodiverse name for the metric you and I would probably just call
+species richness (or taxon richness). However, maybe we might look back at this in a while and be 
+uncertain as to what this means, or maybe we would be confused by the fact that there are actually three
+options on this menu, two of which are identical, and one of which is a map full of zeros. What is going
+on here? Let's go to Shawn Laffan's Biodiverse help wiki:
+
+https://github.com/shawnlaffan/biodiverse/wiki/
+
+... which has a page on the names of all the different biodiversity indices we can calculate:
+
+https://github.com/shawnlaffan/biodiverse/wiki/Indices
+
+The choices are structured in the same way we saw in the panel we used to set up our analysis. Navigate
+to "Richness".
+
+Ahah! We have an explanation of the formula: counting the number of labels--i.e. taxa--in the neighbor
+sets. Sounds like species richness! But what's this about Neighbor Sets? Oh, right, we had the option to
+specify two, but we only used the first one. So this makes sense then; we're getting species richness for
+neighbor set 1, and nothing for neighbor set 2, because we didn't specify a neighbor set 2.
+
+
+
+Endemism analysis:
+Let's try one more non-phylogenetic alpha diversity measure as we build conceptually toward incorporating
+the phylogeny.
+
+***Exercise: The metric we want is called "Endemism whole". See if you can find it in the spatial analysis
+options. We do not need to specify a Neighborhood 2 for this metric. It's akin to species richness, except we 
+are weighting each species' contribution to the total sum by the reciprocal of its range size across
+the whole study domain (i.e., Australia). Some other versions of endemism restrict the geographic
+space for the range size values that are used in the reciprocal weights, thus necessitating a
+Neighborhood 2 specification, which creates a moving window around each focal grid cell. This approach is
+less commonly used.
+
+Let's look at the results.
+
+***Exercise: We've got four Indices to choose from in the output. What does each one mean?
+
+As the last Exercise demonstrated, Biodiverse often outputs multiple indices, even when we only tell it
+to calculate one. Why does it do this? Often the indices are calculated by taking the ratio (or difference,
+or other operations) of other indices, and it might be informative to see visualizations of these other
+indices.
+
+Let's keep this species-based endemism concept in the back of our minds for later when we start looking
+at phylogenetic endemism.
+
+
+
+Phylogenetic diversity and endemism:
+Now let's start using the phylogeny in our analyses. This time we'll tell Biodiverse to calculate two
+indices in a single analysis: Phylogenetic diversity (PD) and Phylogenetic endemism (PE_WE, also known
+sometimes as just PE). (WE stands for weighted endemism.) These indices are nice conceptual
+analogs to the non-phylogenetic indices we calculated earlier. Phylogenetic diversity is the sum of the
+branch lengths connecting the taxa that occur in each grid cell. Phylogenetic endemism is similar, except
+the contribution of each branch to the sum is weighted by the reciprocal of that branch's range size.
+
+***Exercise: see if you can find and run these two metrics.
+
+Let's look at the PD results first.
+
+***Exercise: What is noteworthy about the Acacia assemblages found in southwestern Australia? Why do they
+have exceptionally high PD despite having only modestly high species richness?
+
+Now let's compare phylogenetic endemism (PE_WE) to the species-based endemism index we calculated earlier.
+There are some similar geographic patterns broadly speaking, but there are also some striking differences.
+Let's focus on the two grid cells with very high PE_WE at the southeastern edge of the Cape York
+Peninsula. 
+
+***Exercise: Do these grid cells have a species found on a particularly long branch of the phylogeny?
+If so, what size is this species' range? What does all this tell us about the attributes of taxa we
+find in assemblages with high PE?
+
+
+
+Facets of phylodiversity and switching from phylogram to cladogram:
+As we discussed earlier, there are three basic types of phylogenies. So far, we've been using a phylogram,
+in which branch lengths represent the expected amount of molecular evolution between ancestor and
+descendant. Let's now explore using a cladogram, in which branch lengths are equalized.
+
+Open the Trees dropdown menu at the top and click "convert to equalized branch lengths". (Also note that
+"Import" provides an alternative to the blue plus sign on the Tree toolbar.) If you don't like the
+default name, you can enter your own alternative. Once you've made the new tree, open the tab on the left
+that shows our basedata and tree. Make sure the new tree is selected in the "Tree" Toolbar and look at
+the structure of the new tree.
+
+Now let's re-run the PD and PE calculations with the cladogram.
+
+***Exercise: try running this analysis on your own. Do the results differ compared to phylogram-derived
+PD and PE? How about compared to species richness and species-based endemism?
+
+
+
+Relative Phylogenetic Diversity and Endemism:
+So far, most of the statements we've made about "high" and "low" phylogenetic diversity or endemism have
+been direct comparisons among grid cells within this data set. Depending on your questions or hypotheses,
+this may or may not be a suitable approach. An alternative is to take PD or PE derived from a phylogram
+(or chronogram), in which branch lengths vary, and divide this value by cladogram-derived PD or PE for
+that same grid cell. We call these indices Relative Phylogenetic Diversity (RPD) and Relative
+Phylogenetic Endemism. These values are high when the focal grid cell has a preponderance of taxa on long
+branches and low when there is a preponderance of taxa on short branches.
+
+***Exercise: try running these analyses on your own. Remember to use the Tree toolbar to switch back to
+the phylogram (instead of the cladogram) before running. What do you think would happen if we forgot to
+switch?
+
+
+
+Randomization and CANAPE:
+There's another step we can take to compare phylogenetic diversity and endemism in a different way--one
+that is more directly comparable among studies and data sets. This approach involves using null model
+randomization algorithms to compare the observed patterns to the null distribution we get by reshuffling
+the data according to a chosen set of rules. Usually the approach is to reshuffle the taxon occurrences
+randomly while maintaining the observed species richness values. For each grid cell, we can then generate
+a p-value, which is the percentile rank of the observed value of PD for the true date (or PE, RPD, RPE,
+etc.) compared to the 999 (or however many) values for that grid cell in the randomly generated data sets.
+These p-values can then be used to identify grid cells with significantly high or low values of our chosen
+diversity metric.
+
+The null model randomization approach has been particularly fruitful in developing quantitative tests for
+neo- and paleoendemism. A hotspot of neoendemism should contain many recently diverged lineages (i.e.,
+found on short branches) that have small ranges, whereas a hotspot of paleoendemism should have many
+distantly diverged lineages (i.e., found on long branches) that have small ranges.
+
+The CANAPE approach, which focuses on RPE, allows us to identify such hotspots using quantitative criteria
+in a two-step grid cell selection process. As we learned above, RPE is the ratio of phylogram-derived PE
+(or chronogram-derived PE) to cladogram-derived PE. Because this index is a ratio, it is possible to get
+exceptionally high or low values for the overall ratio when neither the numerator or denominator is
+exceptionally high. Since it doesn't make sense to consider this type of grid cell a center of endemism
+(be it neo- or paleo-), the first step of the CANAPE process is to filter down to only grid cells with
+significantly high values for the numerator of RPE, the denominator, or both. The second step is to then
+test for sigificantly high RPE (paleoendemism) or low RPE (neoendemism) in the remaining subset.
+
+Let's now walk through how generate these results in Biodiverse.
+
+***Exercise: First we need to run a new analysis for RPE. Try finding and running this on your own.
+
+Next we need to run the randomization. Open the Analyses dropdown menu and click Randomisation. Almost
+all of the defaults match what we want. The rand_structured function shuffles taxon occurrences while
+maintaining species richness, which is what we want. 1 iteration isn't enough for a null distribution,
+so let's increase it to 19. Something more like 999 is typical for published analyses, but we don't want
+this to take too long. The rest of the defaults are fine, and unless you're doing a fairly unusual analysis
+in the future, you'll rarely if ever need to touch these. Click "Randomise" and wait a couple of minutes
+for the 19 runs to complete. It will randomize the data and recalculate all of the indices we've calculated
+previously, still visible in the tabs to the left of the current one.
+
+Let's now look through the CANAPE-relevant results. Step one is to find cells that are significant (given
+some threshold) for the numerator of RPE (phylogram-derived PE) or the denominator (cladogram-derived PE,
+also known in Biodiverse as PHYLO_RPE_NULL2). By default, Biodiverse applies a two-tailed threshold of 0.05,
+so the top and bottom 2.5 % of values are deemed significant and shown in red and blue. We can switch to
+viewing the p-values using the leftmost popup menu on the bottom.
+
+For the second phase of CANAPE, we would look at the RPE values themselves, but only within the set of
+grid cells deemed significant in step 1.
+
+Biodiverse is primarily a tool for generating values for spatial phylogenetics metrics and exporting them
+for use with other programs (like R) that provide functionality in statistics, data visualization, etc.
+Tomorrow Matt will give an extensive session on using R for spatial phylogenetics, so we will stop today's
+content at the point of exporting our results, so keep in mind that the skills you learn tomorrow can be
+used either to do spatial phylogenetics from scratch, or to pick up where we are leaving off here in
+Biodiverse.
+
+Let's look at options for exporting our results files using the Export button on the left.
+
+
+
+Additional topics we may explore if there's extra time:
+-Community phylogenetics metrics (e.g. mean nearest taxon distance, mean pairwise distance)
+-Phylogenetic beta diversity
+-Phylogenetic cluster analysis
