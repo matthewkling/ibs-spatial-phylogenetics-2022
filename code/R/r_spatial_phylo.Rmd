@@ -500,7 +500,7 @@ cpr %>%
 
 #### Facets of phylogenetic diversity
 
-
+Phylogenetic branch lengths can represent different macroevolutionary variables, each with different implications for biogeography and conservation. We've indirectly met some different "phylogenetic diversity facets" already, through RPD (which is computed in `canaper`). Let's quickly explore them in a bit more detail.
 
 ```{r facets}
 
@@ -612,7 +612,6 @@ phyloregion(phy_beta, k = k) %>%
       carto("cluster") +
       scale_fill_manual(values = unname(pals::alphabet(k)))
 
-
 # RGB visualization
 # ord <- vegan::metaMDS(phy_beta, k = 3, trymax = 50)$points
 # saveRDS(ord$points, "../../data/cache/mammals_ord.rds")
@@ -624,16 +623,15 @@ ord %>%
       mutate(color = rgb(MDS1, MDS2, MDS3)) %>%
       carto("color") +
       scale_fill_identity()
-
 ```
 
 ------------------------------------------------------------------------
 
 # CONSERVATION PRIORITIZATION
 
-Phylogenetic diversity is useful for basic research, but from the beginning it has also been proposed as an applied conservation tool. Let's run a conservation prioritization analysis. We'll use the California vascular flora dataset for this exercise.
+Phylogenetic diversity is useful for basic research, but from the beginning it has also been proposed as an applied conservation tool. Let's use it to run a conservation prioritization analysis. We'll focus on the California vascular flora dataset for this exercise, which has been used for conservation prioritization in the past ([Kling et al. 2018](https://doi.org/10.1098/rstb.2017.0397)).
 
-Optimal reserve design is a computational challenge, due to the extremely large number of sets of sites that could comprise a protected area network. Our computational workhorse will be the `prioritizr` library, a very flexible and powerful conservation planning toolkit that uses linear solvers to identify optimal conservation solutions.
+Optimal reserve design is a major computational challenge, due to the extremely large number of sets of sites that could comprise a protected area network. Our computational workhorse will be the `prioritizr` library, a very flexible and powerful conservation planning toolkit that uses linear solvers to identify optimal conservation solutions.
 
 First we need to get our data formatted as `raster` objects. We'll also load an additional data layer of current protected areas, derived from Kling et al. (2018).
 
@@ -693,7 +691,7 @@ plot(soln + protected,
 
 ```
 
-While it incorporates phylogeny, this method is still "tip-centric" in that its objective is to maximize the phylogenetic diversity of the tips protected across the reserve network. An alternative that's arguably more consistent with other spatial phylogenetic methods is to build out a phylogenetic community matrix, and weight each branch by its length during prioritization:
+While it incorporates phylogeny, this method is still "tip-centric" in the sense that its objective is to maximize the phylogenetic diversity of the tips protected across the reserve network. An alternative that's arguably more consistent with other spatial phylogenetic metrics is to build out a phylogenetic community matrix, and weight each taxon by its branch length during prioritization. We can see this yields a somewhat different result:
 
 ```{r prioritize_pcomm}
 
