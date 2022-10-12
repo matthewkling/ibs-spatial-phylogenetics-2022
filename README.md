@@ -42,7 +42,10 @@ install.packages("canaper", repos = "https://ropensci.r-universe.dev")
 
 ### Code & data
 
-We will be providing data and code for the workshop, which participants will get by downloading a copy of this GitHub repository. This content will be added prior to the workshop.
+This repository contains the code and data you'll need for the workshop. You'll need to create an RStudio project based on this repository. There are two alternative ways to do this (the first is slightly easier but won't work if your machine doesn't have git installed):
+
+- Open RStudio. Select File > New project > Version control > Git. Enter https://github.com/matthewkling/ibs-spatial-phylogenetics-2022.git as the Repository URL, browse to select where on your computer to save the project, and click Create Project.
+- In your web broweser, go to https://github.com/matthewkling/ibs-spatial-phylogenetics-2022, click the green Code button, select Download ZIP, and unzip the downloaded file on your computer. Then in RStudio, select File > New project > Exiting Directory, browse to select the folder you just unzipped, and click Create Project.
 
 
 ## Instructors
