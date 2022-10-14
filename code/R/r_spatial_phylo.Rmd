@@ -294,7 +294,7 @@ ds <- birds
 
 # with phyloregion library
 scomm <- ds$comm %>% Matrix(sparse = TRUE)
-PD(scomm, ds$tree)
+# PD(scomm, ds$tree)
 pr <- ds$xy %>%
       mutate(pd = PD(scomm, ds$tree),
              pe = phylo_endemism(scomm, ds$tree),
