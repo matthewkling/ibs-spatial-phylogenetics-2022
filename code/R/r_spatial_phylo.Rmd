@@ -1,15 +1,15 @@
 ---
 title: "IBS spatial phylogenetics workshop"
 author: "Matthew Kling"
-date: "2022-09-26"
+date: "2022-10-12"
 output: html_document
 editor_options: 
   chunk_output_type: inline
 ---
 
-# SETUP
+# *SETUP*
 
-```{r setup, include=TRUE}
+```{r setup, include=TRUE, message = FALSE, warning = FALSE}
 knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 
 # install.packages(
@@ -29,6 +29,7 @@ library(pals)
 library(vegan)
 library(geosphere)
 
+# load additional convenience functions defined in this other script
 source("../../code/R/functions.r")
 
 select <- dplyr::select
@@ -36,11 +37,11 @@ select <- dplyr::select
 
 ------------------------------------------------------------------------
 
-# WARMUP
+# *WARMUP*
 
-## Phylogenies
+## *Phylogenies*
 
-Let's start with a quick primer on phylogenetic trees in R. We'll use `ape`, the core R phylogenetics library. (Other libraries to be aware of for working with phylogenies include `phytools`, `picante`, and `ggtree`, among others.)
+*Let's start with a quick primer on phylogenetic trees in R. We'll use `ape`, the core R phylogenetics library. (Other libraries to be aware of for working with phylogenies include `phytools`, `picante`, and `ggtree`, among others.)*
 
 ```{r phylo}
 
@@ -49,43 +50,56 @@ tree <- read.tree("../../data/mishler_2014/mishler_2014_acacia.tre")
 plot(tree, type = "fan", show.tip.label = F)
 
 # explore the data structure of a phylogeny
+# class(tree)
+# print(tree)
+# str(tree)
+# ?plot.phylo
+# plot(tree, show.tip.label = F, type = "radial")
 
-
-# plot the branches connecting a set of tips (e.g. a local community).
-# PD is the lengths of these branches, plus the edges connecting them to the root.
+# plot the branches connecting a set of tips (e.g. a local community) --
+# PD is the lengths of these branches (plus the edges connecting them to the root)
 community <- sample(tree$tip.label, 5)
 phyplot(tree, connect = community, 
-        show.tip.label = F, type = "fan")
+        show.tip.label = F)
 ```
 
-#### Exercises:
+#### *Exercises:*
 
--   Load and plot the mammal phylogeny (Upham et al. 2019).
--   Plot the subtree representing the marsupials. The most recent common ancestor of the two species listed below is the crown node of all marsupials; you can find it using `getMRCA()` and prune it from the full tree using `extract.clade()`.
--   Plot the full mammal tree with marsupials highlighted in red. You can use `phytools::getDescendants()` to index all the descendants of the marsupial MRCA.
+-   *Load and plot the mammal phylogeny (Upham et al. 2019).*
+-   *Plot the subtree representing the marsupials. The most recent common ancestor of the two species listed below is the crown node of all marsupials; you can find it using `getMRCA()` and prune it from the full tree using `extract.clade()`.*
+-   *Plot the full mammal tree with marsupials highlighted in red. You can use `phytools::getDescendants()` to index all the descendants of the marsupial MRCA.*
 
 ```{r phylo_ex}
+# Load and plot the mammal phylogeny
 marsupials <- c("Lestoros_inca", "Lagostrophus_fasciatus")
+
+# Plot the subtree representing the marsupials
+tree <- read.tree("../../data/upham_2019/upham_2019_tree0000.tre")
+mrca <- getMRCA(tree, marsupials)
+extract.clade(tree, mrca)
+
+# Plot the full mammal tree with marsupials highlighted in red
+desc <- phytools::getDescendants(tree, mrca)
+clr <- rep("black", nrow(tree$edge))
+clr[which.edge(tree, desc)] <- "red"
+plot(tree, edge.color = clr, show.tip.label = F, type = "fan")
 ```
 
 ------------------------------------------------------------------------
 
-## Spatial data in R
+## *Spatial data in R*
 
-For a spatial phylogenetic analysis, we need to define geographic areas of interest, within which organisms are considered part of the same community. These areas can be grid cells or can be irregular polygons, but we'll focus on the former here as the latter are conceptually similar but more complex to work with.
+*For a spatial phylogenetic analysis, we need to define geographic areas of interest, within which organisms are considered part of the same community. These areas can be grid cells or can be irregular polygons, but we'll focus on the former here as the latter are conceptually similar but more complex to work with.*
 
-We'll be working with raster data and point data. The raster data comprise a spatial grid of presences and absences. Point data represent occurrence localities, which we'll convert to grids of presences and absences before analysis.
+*We'll be working with raster data and point data. The raster data comprise a spatial grid of presences and absences. Point data represent occurrence localities, which we'll convert to grids of presences and absences before analysis.*
 
-Here's a quick demo of loading and visualizing some spatial data.
+*Here's a quick demo of loading and visualizing some spatial data.*
 
 ```{r spatial}
 
 # raster data, read in with the terra package
 r <- rast("../../data/jetz_2012/bbs_occ.tif")
-# r
-# names(r)
 plot(r[[1:4]], col = "green")
-plot(subset(r, "Accipiter cooperii"))
 plot(sum(r, na.rm = T))
 
 # point data, read in as a data frame
@@ -104,40 +118,43 @@ ggplot(pr, aes(x, y)) +
 # for one species into to a proper raster object
 rp <- pr %>%
       filter(taxa == taxa[1000]) %>%
-      select(x, y) %>%
+      dplyr::select(x, y) %>%
       distinct() %>%
       mutate(present = T) %>%
       rast()
 plot(rp, col = "black")
+
 ```
 
-#### Exercises:
+#### *Exercises:*
 
--   Load the terrestrial mammal spatial data using `rast()`
--   Plot a map of the range of the gray wolf (Canis lupus).
--   PLot a map of canid species richness (all species in the genus Canis).
--   Plot a map of overall mammal species richness.
+-   *Load the terrestrial mammal spatial data using `rast()`*
+-   *Plot a map of the range of the gray wolf (Canis lupus).*
+-   *Plot a map of canid species richness (all species in the genus Canis).*
+-   *Plot a map of overall mammal species richness.*
 
 ```{r spatial_ex}
-
+r <- rast("../../data/upham_2019/iucn_mammals.tif")
+r %>% subset("Canis lupus") %>% plot()
+r %>% subset(grep("Canis ", names(r))) %>% sum() %>% plot()
+r %>% sum() %>% plot()
 ```
 
 ------------------------------------------------------------------------
 
-# SPATIAL PHYLOGENETIC DATA
+# *SPATIAL PHYLOGENETIC DATA*
 
-At a minimum, every spatial phylogenetic dataset consists of a phylogeny and a spatial dataset representing occurrence locations of the terminal taxa. We'll use four different datasets as examples.
+*At a minimum, every spatial phylogenetic dataset consists of a phylogeny and a spatial dataset representing occurrence locations of the terminal taxa. We'll use four different datasets as examples.*
 
-To keep things tidy, let's start by loading the data for each one, and getting the pieces into a standardized format. We'll package each dataset in a list with three pieces:
+*To keep things tidy, let's start by loading the data for each one, and getting the pieces into a standardized format. We'll package each dataset in a list with three pieces:*
 
--   tree: the phylogeny
--   comm: a community matrix, with a row for each site and a column for each terminal taxon
--   xy: a data frame storing the spatial coordinates of each row of the community matrix
+-   *tree: the phylogeny*
+-   *comm: a community matrix, with a row for each site and a column for each terminal taxon*
+-   *xy: a data frame storing the spatial coordinates of each row of the community matrix*
 
-To avoid issues with some of the algorithms used later on, we need to do a few things to clean up the datasets, including removing taxa that aren't present in both the spatial and phylogenetic datasets, and removing unoccupied sites from the community matrix. To do this we'll use a function called `clean_dataset()` defined in `functions.R`.
+*To avoid issues with some of the algorithms used later on, we need to do a few things to clean up the datasets, including removing taxa that aren't present in both the spatial and phylogenetic datasets, and removing unoccupied sites from the community matrix. To do this we'll use a function called `clean_dataset()` defined in `functions.R`.*
 
-
-#### Calfiornia vascular plants (from [Thornhill et al. 2017](https://doi.org/10.1186/s12915-017-0435-x)):
+#### *Cailfornia vascular plants (from [Thornhill et al. 2017](https://doi.org/10.1186/s12915-017-0435-x)):*
 
 ```{r flora_data}
 
@@ -146,10 +163,10 @@ tree <- read.nexus("../../data/thornhill_2017/thornhill_2017_chronogram.nex")
 
 # spatial data
 occ <- read_csv("../../data/thornhill_2017/thornhill_2017_occ.csv")
-
+glimpse(occ)
 # # compare species lists
-# all.equal(sort(tree$tip.label),
-#           sort(unique(occ$otu)))
+all.equal(sort(tree$tip.label),
+          sort(unique(occ$otu)))
 
 # summarize to lat-long grid
 rnd <- function(x, y) round(x/y)*y # round x to the nearest y
@@ -173,7 +190,7 @@ flora <- list(tree = tree,
       clean_dataset()
 ```
 
-#### Australian acacia (from [Mishler et al. 2014](https://doi.org/10.1038/ncomms5473)):
+#### *Australian acacia (from [Mishler et al. 2014](https://doi.org/10.1038/ncomms5473)):*
 
 ```{r acacia_data}
 
@@ -203,7 +220,7 @@ acacia <- list(tree = tree,
       clean_dataset()
 ```
 
-#### American birds (phylogeny from [Jetz et al. 2012](https://doi.org/10.1038/nature11631), spatial data from [US Breeding Bird Survey](https://www.pwrc.usgs.gov/bbs/rawdata/)):
+#### *American birds (phylogeny from [Jetz et al. 2012](https://doi.org/10.1038/nature11631), spatial data from [US Breeding Bird Survey](https://www.pwrc.usgs.gov/bbs/rawdata/)):*
 
 ```{r bird_data}
 
@@ -215,6 +232,8 @@ r <- rast("../../data/jetz_2012/bbs_occ.tif")
 
 # construct community matrix
 comm <- values(r)
+dim(comm)
+image(t(comm))
 
 # spatial coordinates
 xy <- crds(r[[1]], df = T, na.rm = F)
@@ -226,7 +245,7 @@ birds <- list(tree = tree,
       clean_dataset()
 ```
 
-#### Mammals (phylogeny from [Upham et al. 2019](https://doi.org/10.1371/journal.pbio.3000494), spatial data from [IUCN](https://www.iucnredlist.org/resources/spatial-data-download)):
+#### *Mammals (phylogeny from [Upham et al. 2019](https://doi.org/10.1371/journal.pbio.3000494), spatial data from [IUCN](https://www.iucnredlist.org/resources/spatial-data-download)):*
 
 ```{r mammal_data}
 
@@ -249,26 +268,25 @@ mammals <- list(tree = tree,
       clean_dataset()
 ```
 
+#### *Exercises:*
 
-#### Exercises:
-
--   Plot the phylogeny for each of the datasets.
--   Plot the spatial coordinates for each of the datasets.
--   Identify the number of taxa and number of sites in each dataset.
+-   *Plot the phylogeny for each of the datasets.*
+-   *Plot the spatial coordinates for each of the datasets.*
+-   *Identify the number of taxa and number of sites in each dataset.*
 
 ```{r data_ex}
-
+mammals$tree %>% plot(show.tip.label = F)
+mammals$xy %>% plot()
+dim(mammals$comm)
 ```
-
 
 ------------------------------------------------------------------------
 
-# ALPHA DIVERSITY
+# *ALPHA DIVERSITY*
 
-Alpha phylogenetic diversity (and related metrics like phylogenetic endemism) represent the amount of evolutionary history present in a single community. We'll look at functions from some existing packages that can calculate phylodiversity metrics, and reproduce these with some of our own calculations. We'll also cover methods for significance testing, and explore the sensitivity of these tests to spatial scale. And we'll take a look at how alternative evolutionary branch lengths influence results.
+*Alpha phylogenetic diversity (and related metrics like phylogenetic endemism) represent the amount of evolutionary history present in a single community. We'll look at functions from some existing packages that can calculate phylodiversity metrics, and reproduce these with some of our own calculations. We'll also cover methods for significance testing, and explore the sensitivity of these tests to spatial scale. And we'll take a look at how alternative evolutionary branch lengths influence results.*
 
-
-#### Pre-packaged functions
+#### *Pre-packaged functions*
 
 ```{r alpha}
 
@@ -276,17 +294,23 @@ ds <- birds
 
 # with phyloregion library
 scomm <- ds$comm %>% Matrix(sparse = TRUE)
+PD(scomm, ds$tree)
 pr <- ds$xy %>%
       mutate(pd = PD(scomm, ds$tree),
              pe = phylo_endemism(scomm, ds$tree),
              we = weighted_endemism(scomm))
+pr %>% ggplot(aes(x, y, fill = pd)) + geom_raster()
 pr %>% carto("pd")
+pr %>% carto("pe")
 
 # with canaper library
+# ?cpr_rand_test
 cpr <- cpr_rand_test(ds$comm, ds$tree, 
                      null_model = "curveball",
                      n_reps = 1) %>%
       bind_cols(ds$xy)
+# glimpse(cpr)
+# names(cpr)
 cpr %>% carto("pd_obs")
 cpr %>% carto("pe_obs")
 
@@ -301,16 +325,18 @@ for(fun in list(min, max)){
 }
 ```
 
-#### Manual approach
+#### *Manual approach*
 
-Canaper and phyloregion are pretty great, but how are these spatial biodiversity metrics actually being calculated under the hood? Let's reproduce some of these results with a slightly more manual approach.
+*Canaper and phyloregion are pretty great, but how are these spatial biodiversity metrics actually being calculated under the hood? Let's reproduce some of these results with a slightly more manual approach.*
 
 ```{r manual}
 
-# add clades to community matrix
+# build community matrix including not just tips as above,
+# but also every clade at every level
 pcomm <- build_clade_ranges(ds$tree, ds$comm) # from functions.r
 # dim(ds$comm)
 # dim(pcomm)
+image(t(pcomm))
 
 # clade-level metrics
 range_size <- colSums(pcomm)
@@ -320,6 +346,7 @@ phyplot(ds$tree, value = branch_length,
 phyplot(ds$tree, value = log(1 / range_size),
         show.tip.label = F, type = "fan", main = "log endemism")
 
+# PD and PE are just weighted summaries across this pcomm matrix:
 pd <- pcomm %>%
       apply(1, function(x) x * branch_length) %>%
       colSums()
@@ -332,48 +359,86 @@ ds$xy %>% mutate(pe = pe) %>% carto("pe")
 
 ```
 
-#### Exercises:
+#### *Exercises:*
 
--   Compute these metrics with one of the other datasets.
--   Species richness can be considered PD on a star phylogeny. Prove it.
--   Manual calculations make it clear that these diversity metrics are simply weighted summaries of the `pcomm` matrix, which invites any number of additional weighting schemes. Make a version weighted by: taxon endangerment; site endangerment; or taxon-site habitat importance (using fake simulated data for these variables).
+-   *Compute these metrics with one of the other datasets.*
+-   *Species richness can be considered PD on a star phylogeny. Prove it.*
+-   *Manual calculations make it clear that these diversity metrics are simply weighted summaries of the `pcomm` matrix, which invites any number of additional weighting schemes. Make a version weighted by: taxon endangerment; site endangerment; or taxon-site habitat importance (using fake simulated data for these variables).*
 
 ```{r alpha_ex}
 
+# SR == PD on star phylogeny
+ds <- birds
+star <- ds$tree
+tip <- ! star$edge[,2] %in% star$edge[,1]
+star$edge.length <- rep(0, length(star$edge.length))
+star$edge.length[tip] <- 1
+plot(star, type = "fan", show.tip.label = F)
+sr <- rowSums(ds$comm)
+pd <- PD(scomm, star)
+plot(sr, pd)
+
+# taxon & site endangerment
+# (this would represent locations of treatened sites with high concentrations of range-restricted, endangered taxa)
+endangerment <- runif(ncol(pcomm)) # fake random data
+site_threat <- runif(nrow(pcomm)) # fake random data
+tpe <- pcomm %>%
+      apply(1, function(x) x * branch_length / range_size * endangerment) %>%
+      apply(1, function(x) x * site_threat) %>%
+      rowSums()
+ds$xy %>% mutate(tpe = tpe) %>% carto("tpe")
 ```
 
-#### Significance testing
+#### *Significance testing*
 
-To get a sense for how noteworthy an observed high or low diversity metric is, it can be helpful to compare the observed value to a null distribution. Let's demonstrate this using the acacia dataset. The `cpr_rand_test()` function randomly permutes the community matrix many times, calculating the diversity of each location each time to derive a distribution of null diversity values for each location.
+*To get a sense for how noteworthy an observed high or low diversity metric is, it can be helpful to compare the observed value to a null distribution. Let's demonstrate this using the acacia dataset. The `cpr_rand_test()` function randomly permutes the community matrix many times, calculating the diversity of each location each time to derive a distribution of null diversity values for each location.*
 
-CANAPE (Mishler et al. 2014) is a special application of this randomization approach, used to identify areas of neo-endemism and paleo-endemism.
+*CANAPE (Mishler et al. 2014) is a special application of this randomization approach, used to identify areas of neo-endemism and paleo-endemism.*
 
 ```{r sig}
 ds <- acacia
 
+# note that this is a phylogram, not a chronogram
+# ds$tree %>% plot(show.tip.label = F)
+
+# phylodiversity randomizations
 cpr <- cpr_rand_test(ds$comm, ds$tree, 
                      null_model = "curveball",
                      n_reps = 101, n_iterations = 10000) %>%
       bind_cols(ds$xy)
-# glimpse(cpr)
 
 # raw PD patterns here are very different from randomized quantiles
 cpr %>% carto("pd_obs")
-cpr %>% carto("pd_obs_p_upper")cpr %>%
+cpr %>% carto("pd_obs_p_upper")
+cpr %>%
       ggplot(aes(pd_obs, pd_obs_p_upper)) +
       geom_point()
+cpr %>% carto("rpd_obs_p_upper")
 
-# CANAPE
-cpr %>%
-      cpr_classify_endem() %>%
+## CANAPE ##
+
+# classify canape categories
+end <- cpr %>% cpr_classify_endem() 
+
+# map
+end %>%
       carto("endem_type") +
       scale_fill_manual(
             values = c("mediumpurple1", "red", "gray80", "blue", "darkorchid4"),
             breaks = c("mixed", "neo", "not significant", "paleo", "super"))
 
+# scatterplot of canape components
+end %>%
+      ggplot(aes(pe_alt_obs, pe_obs,
+                 color = endem_type)) +
+      geom_point() +
+      scale_color_manual(
+            values = c("mediumpurple1", "red", "gray80", "blue", "darkorchid4"),
+            breaks = c("mixed", "neo", "not significant", "paleo", "super"))
+
 ```
 
-Null models can be constructed in many different ways, and these differences can have a major effect on results. We won't get too far into the weeds here, but let's illustrate how a few different null models affect PD significance values for this dataset:
+*Null models can be constructed in many different ways, and these differences can have a major effect on results. We won't get too far into the weeds here, but let's illustrate how a few different null models affect PD significance values for this dataset:*
 
 ```{r nulls}
 
@@ -399,7 +464,7 @@ bind_rows(curveball, r0, c0) %>%
 
 ```
 
-Before moving on from randomizations, it's important to note that the size of the geographic region in an analysis can strongly influence the results, because it alters the species pool to which a site is compared during randomization. Let's look at three different extents:
+*Before moving on from randomizations, it's important to note that the size of the geographic region in an analysis can strongly influence the results, because it alters the species pool to which a site is compared during randomization. Let's look at three different extents:*
 
 ```{r scale}
 
@@ -459,14 +524,15 @@ cpr %>%
       scale_fill_manual(values = c("red", "blue", "gray"))
 ```
 
-#### Facets of phylogenetic diversity
+#### *Facets of phylogenetic diversity*
 
-Phylogenetic branch lengths can represent different macroevolutionary variables, each with different implications for biogeography and conservation. We've indirectly met some different "phylogenetic diversity facets" already, through RPD (which is computed in `canaper`). Let's quickly explore them in a bit more detail.
+*Phylogenetic branch lengths can represent different macroevolutionary variables, each with different implications for biogeography and conservation. We've indirectly met some different "phylogenetic diversity facets" already, through RPD (which is computed in `canaper`). Let's quickly explore them in a bit more detail.*
 
 ```{r facets}
 
 ds <- flora
 
+# function to normalize branch lengths
 scale_edges <- function(tree){
       tree$edge.length <- tree$edge.length / sum(tree$edge.length)
       return(tree)
@@ -491,18 +557,19 @@ phyplot(phylogram, phylogram$edge.length,
         type = "fan", show.tip.label = F, main = "divergence")
 phyplot(cladogram, cladogram$edge.length,
         type = "fan", show.tip.label = F, main = "cladogenesis")
-# phyplot(chronogram, phylogram$edge.length / chronogram$edge.length,
-#                   type = "fan", show.tip.label = F, main = "dynamism")
 dev.off()
 
 
 # format as sparse matrix for phyloregion package
 scomm <- ds$comm %>% Matrix(sparse = TRUE)
 
+# PD for the three trees
 div <- ds$xy %>%
       mutate(divergence = PD(scomm, phylogram),
              time = PD(scomm, chronogram),
              diversification = PD(scomm, cladogram))
+
+# visualize
 div %>%
       pivot_longer(c(divergence, time, diversification), 
                    "facet", "value") %>%
@@ -510,37 +577,50 @@ div %>%
       mutate(rank = rank(value)) %>%
       carto("rank") + 
       facet_wrap(~facet, nrow = 1)
-
 div %>%
       mutate(rpd = time / diversification) %>% 
       carto("rpd")
-
 div %>%
       mutate(dynamism = divergence / time) %>%
       carto("dynamism")
 
 ```
 
+#### *Exercises:*
 
-#### Exercises:
-
--   Verify that `rpd` as returned by the `cpr_rand_test()` function using a chronogram is identical to the ratio of chronogram PD to cladogram PD calculated immediately above.
--   Make a map of the ratio of phylogram PD to cladogram PD, which measures the relative contribution of anagenesis versus cladogenesis to a community's history. Where is this highest and lowest?
+-   *Verify that `rpd` as returned by the `cpr_rand_test()` function using a chronogram is identical to the ratio of chronogram PD to cladogram PD calculated immediately above.*
+-   *Make a map of the ratio of phylogram PD to cladogram PD, which measures the relative contribution of anagenesis versus cladogenesis to a community's history. Where is this highest and lowest?*
 
 ```{r alpha_ex2}
+# RPD from cpr_rand_test() == chronogram PD / cladogram PD
+cpr <- cpr_rand_test(ds$comm, ds$tree, null_model = "curveball", n_reps = 1)
+pd_chron <- PD(scomm, chronogram)
+pd_clad <- PD(scomm, cladogram)
+plot(div$time/div$diversification, cpr$rpd_obs)
 
+# phylogram PD / cladogram PD
+div %>%
+      mutate(genesis = divergence / diversification) %>%
+      carto("genesis")
+
+# phylogram PE / cladogram PE
+ds$xy %>%
+      mutate(divergence = phylo_endemism(scomm, phylogram),
+             time = phylo_endemism(scomm, chronogram),
+             diversification = phylo_endemism(scomm, cladogram)) %>%
+      mutate(genesis = divergence / diversification) %>%
+      carto("genesis")
 ```
-
 
 ------------------------------------------------------------------------
 
-# BETA DIVERSITY
+# *BETA DIVERSITY*
 
-Analyses of beta diversity focus on compositional differences among local communities. Phylogenetic versions of these analyses represent differences between communities as the difference in the portion of the phylogenetic tree that's found in each site.
+*Analyses of beta diversity focus on compositional differences among local communities. Phylogenetic versions of these analyses represent differences between communities as the difference in the portion of the phylogenetic tree that's found in each site.*
 
-#### Turnover
+#### *Turnover*
 
-We'll begin by creating a pairwise turnover matrix with a row and column for each site. We can compare this to species-based turnover and geographic distance. Further exploration of these turnover patterns could use a modeling approach like GDM (Ferrier 2007) to understand how factors like environmental differences explain phylogenetic turnover, but we will not cover that here.
+*We'll begin by creating a pairwise turnover matrix with a row and column for each site. We can compare this to species-based turnover and geographic distance. Further exploration of these turnover patterns could use a modeling approach like GDM (Ferrier 2007) to understand how factors like environmental differences explain phylogenetic turnover, but we will not cover that here.*
 
 ```{r beta}
 
@@ -551,6 +631,7 @@ phy_beta <- ds$comm %>% # phylo sorensen's
       Matrix(sparse = TRUE) %>%
       phylobeta(ds$tree) %>%
       pluck("phylo.beta.sor") 
+str(phy_beta)
 sp_beta <- ds$comm %>% # species sorensen's
       betapart::beta.pair() %>%
       pluck("beta.sor")
@@ -568,9 +649,9 @@ tibble(distance = geo_dist[ss],
       geom_smooth(aes(group = stat), color = "black")
 ```
 
-#### Regionalization
+#### *Regionalization*
 
-We can also use turnover data to make maps of phylogenetic similarity. Let's look at two approaches: a discrete classification of phylogenetic regions using a cluster analysis from the `phyloregions` package, and a continuous ordination map that plots similar sites in similar colors:
+*We can also use turnover data to make maps of phylogenetic similarity. Let's look at two approaches: a discrete classification of phylogenetic regions using a cluster analysis from the `phyloregions` package, and a continuous ordination map that plots similar sites in similar colors:*
 
 ```{r regions}
 
@@ -579,9 +660,34 @@ k <- 25
 phyloregion(phy_beta, k = k) %>%
       pluck("membership") %>%
       bind_cols(ds$xy) %>%
-      mutate(cluster = factor(cluster))%>%
+      mutate(cluster = factor(cluster)) %>%
       carto("cluster") +
       scale_fill_manual(values = unname(pals::alphabet(k)))
+
+# nmds of regions
+	reg <- phyloregion(phy_beta, k = k)
+	metaMDS(reg$region.dist, k = 2)$points %>%
+      as.data.frame() %>%
+      ggplot(aes(MDS1, MDS2, color = factor(1:k), label = 1:k)) +
+      geom_label(fontface = "bold") +
+      scale_color_manual(values = unname(pals::alphabet(k))) +
+      theme(legend.position = "none")
+
+    # unpacking and visualizing regional hclust
+    library(dendextend)
+	hc <- phy_beta %>% hclust(method = "average")
+	clust <- phyloregion(phy_beta, k = k) %>%
+	      pluck("membership")
+	clrs <- unname(pals::alphabet(k))[clust$cluster]
+	dend <- as.dendrogram(hc)
+	o <- order.dendrogram(dend)
+	dend <- assign_values_to_leaves_edgePar(
+	      dend, value = clrs[o], edgePar = "col")
+	plot(dend, leaflab = "none")
+
+	circlize_dendrogram(dend, labels = F, 
+	                    dend_track_height = .9, 
+	                    labels_track_height = 0)
 
 # RGB visualization
 # ord <- vegan::metaMDS(phy_beta, k = 3, trymax = 50)$points
@@ -596,10 +702,10 @@ ord %>%
       scale_fill_identity()
 ```
 
-#### Exercises:
+#### *Exercises:*
 
-- The above demonstration used Sorensen's distance as a measure of phylogenetic community difference. Try things with Jaccard's distance. How do the results differ?
-- Experiment with different numbers of clusters and different cluster methods in the `phyloregion()` function, to explore how robust regional boundaries are to these parameter choices.
+-   *The above demonstration used Sorensen's distance as a measure of phylogenetic community difference. Try things with Jaccard's distance. How do the results differ?*
+-   *Experiment with different numbers of clusters and different cluster methods in the `phyloregion()` function, to explore how robust regional boundaries are to these parameter choices.*
 
 ```{r beta_ex}
 
@@ -607,13 +713,13 @@ ord %>%
 
 ------------------------------------------------------------------------
 
-# CONSERVATION PRIORITIZATION
+# *CONSERVATION PRIORITIZATION*
 
-Phylogenetic diversity is useful for basic research, but from the beginning it has also been proposed as an applied conservation tool. Let's use it to run a conservation prioritization analysis. We'll focus on the California vascular flora dataset for this exercise, which has been used for conservation prioritization in the past ([Kling et al. 2018](https://doi.org/10.1098/rstb.2017.0397)).
+*Phylogenetic diversity is useful for basic research, but from the beginning it has also been proposed as an applied conservation tool. Let's use it to run a conservation prioritization analysis. We'll focus on the California vascular flora dataset for this exercise, which has been used for conservation prioritization in the past ([Kling et al. 2018](https://doi.org/10.1098/rstb.2017.0397)).*
 
-Optimal reserve design is a major computational challenge, due to the extremely large number of sets of sites that could comprise a protected area network. Our computational workhorse will be the `prioritizr` library, a very flexible and powerful conservation planning toolkit that uses linear solvers to identify optimal conservation solutions.
+*Optimal reserve design is a major computational challenge, due to the extremely large number of sets of sites that could comprise a protected area network. Our computational workhorse will be the `prioritizr` library, a very flexible and powerful conservation planning toolkit that uses linear solvers to identify optimal conservation solutions.*
 
-First we need to get our data formatted as `raster` objects. We'll also load an additional data layer of current protected areas, derived from Kling et al. (2018).
+*First we need to get our data formatted as `raster` objects. We'll also load an additional data layer of current protected areas, derived from Kling et al. (2018).*
 
 ```{r prioritize_setup}
 
@@ -643,7 +749,7 @@ crs(protected) <- crs(units) <- crs(features)
 
 ```
 
-The `prioritizr` library has some native functionality for incorporating phylogenies into conservation prioritization, so let's start there.
+*The `prioritizr` library has some native functionality for incorporating phylogenies into conservation prioritization, so let's start there.*
 
 ```{r prioritize}
 
@@ -671,12 +777,12 @@ plot(soln + protected,
 
 ```
 
-While it incorporates phylogeny, this method is still "tip-centric" in the sense that its objective is to maximize the phylogenetic diversity of the tips protected across the reserve network. An alternative that's arguably more consistent with other spatial phylogenetic metrics is to build out a phylogenetic community matrix, and weight each taxon by its branch length during prioritization. We can see this yields a somewhat different result:
+*While it incorporates phylogeny, this method is still "tip-centric" in the sense that its objective is to maximize the phylogenetic diversity of the tips protected across the reserve network -- the targets are still the tips, rather than taxa at all levels. A subtly different alternative that's arguably more consistent with spatial phylogenetic metrics like PE is to build out a phylogenetic community matrix, and weight each taxon by its branch length during prioritization. We can see this yields a somewhat different result:*
 
 ```{r prioritize_pcomm}
 
+# build feature set representing all clades, not just tips
 pcomm <- build_clade_ranges(ds$tree, ds$comm)
-
 pfeatures <- ds$xy %>%
       bind_cols(pcomm) %>%
       rasterFromXYZ()
@@ -694,15 +800,45 @@ plot(soln + protected,
      col = c("gray", "orange", "darkgreen"))
 ```
 
-#### Exercises:
+#### *Exercises:*
 
-- These exercises were based on the chronogram, which we packaged up with the California flora dataset. Replicate them with the phylogram and cladogram. Do the conservation priorities change?
-- `prioritizr` has functionality to consider many additional factors, such as land cost, reserve shape, and reserve connectivity. A simple example is `add_neighbor_constraints(k = 2)`, which would force proposed reserves to have at least two neighbors. Like other constraints this will likely add a lot of computational time, so try it when you have a few minutes to wait.
+-   *These exercises were based on the chronogram, which we packaged up with the California flora dataset. Replicate them with the phylogram and cladogram. Do the conservation priorities change?*
+-   *`prioritizr` has functionality to consider many additional factors, such as land cost, reserve shape, and reserve connectivity. A simple example is `add_neighbor_constraints(k = 2)`, which would force proposed reserves to have at least two neighbors. Like other constraints this will likely add a lot of computational time, so try it when you have a few minutes to wait.*
 
 ```{r prioritize_ex}
 
+prob <- problem(units, features) %>%
+      add_relative_targets(0.1) %>%
+      add_binary_decisions() %>%
+      add_rsymphony_solver(gap = 0)
+
+soln1 <- prob %>%
+      add_max_phylo_div_objective(budget = prot_area,
+                                  tree = chronogram) %>%
+      solve()
+soln2 <- prob %>%
+      add_max_phylo_div_objective(budget = prot_area,
+                                  tree = cladogram) %>%
+      solve()
+soln3 <- prob %>%
+      add_max_phylo_div_objective(budget = prot_area,
+                                  tree = phylogram) %>%
+      solve(run_checks = F)
+
+solns <- stack(soln1, soln2, soln3)
+
+# plot priorities for each facet
+solns %>%
+      setNames(c("chronogram", "cladogram", "phylogram")) %>%
+      plot(main = "cladogram",
+           col = c("gray", "red"))
+
+# plot number of facets under which each cell is a priority
+solns %>%
+      sum() %>%
+      plot(col = c("gray", "yellow", "orange", "red"))
 ```
 
 ------------------------------------------------------------------------
 
-And that is all!
+*And that is all!*
